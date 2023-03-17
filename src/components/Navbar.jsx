@@ -20,18 +20,18 @@ const Navbar = (props) => {
             <div>
                 {/* NAVBAR BUTTON START */}
                 <ul className='flex py-6 backdrop-blur justify-between rounded-b-3xl drop-shadow-2xl border-white/10 border-b-4'>
-                    <li className='px-10 py-5 w-[500px] flex justify-start items-center dark:text-transparent bg-gradient-to-tr from-blue-400 via-sky-600 to-emerald-600 bg-clip-text'>
-                        <ul className='invisible md:visible lg:visible flex items-center gap-6 font-sans font-semibold cursor-pointer text-base lg:text-2xl'>
-                            <li className='flex text-center gap-2 text-xl items-center text-sky-600 dark:text-transparent dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800'>
-                                <BiCategoryAlt className='dark:text-blue-400' />
+                    <li className='px-10 py-5 w-[500px] flex justify-start items-center'>
+                        <ul className='invisible md:visible lg:visible flex items-center lg:gap-6 md:gap-4 font-sans font-semibold cursor-pointer text-base lg:text-2xl'>
+                            <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
+                                <BiCategoryAlt className='dark:text-sky-600' />
                                 <Link to='/productlist'>Category</Link>
                             </li>
-                            <li className='flex text-center gap-2 text-xl items-center text-sky-600 dark:text-transparent dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800'>
-                                <BsBoxSeam className='dark:text-blue-400' />
+                            <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
+                                <BsBoxSeam className='dark:text-sky-600' />
                                 <Link to='/productlist'>Product</Link>
                             </li>
-                            <li className='flex text-center gap-2 text-xl items-center text-sky-600 dark:text-transparent dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800'>
-                                <BsTelephone className='dark:text-blue-400' />
+                            <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
+                                <BsTelephone className='dark:text-sky-600' />
                                 <Link to='/productlist'>Contact</Link>
                             </li>
                         </ul>
@@ -59,11 +59,11 @@ const Navbar = (props) => {
                             <Link to='/order-with'>Order Now</Link>
                         </div> */}
                         <Link to='/order-with'>
-                            <div class='relative invisible md:visible lg:visible inline-flex items-center justify-center px-5 py-2 overflow-hidden font-medium text-sky-600 transition duration-700 ease-out border-2  dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 via-sky-600 to-emerald-600 bg-clip-text border-sky-600 rounded-full shadow-md group'>
-                                <span class='absolute inset-0 flex items-center justify-center w-full h-full dark:text-slate-900 dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 via-sky-600 to-emerald-600 bg-clip-content dark:drop-shadow-sm text-white duration-700 -translate-x-full bg-sky-600 group-hover:translate-x-0 ease'>
+                            <div class='relative invisible md:visible lg:visible inline-flex items-center justify-center px-5 py-2 overflow-hidden font-medium text-sky-600 transition duration-700 ease-out border-2  dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text border-sky-600 rounded-full shadow-md group'>
+                                <span class='absolute inset-0 flex items-center justify-center w-full h-full dark:text-slate-900 dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-content dark:drop-shadow-sm text-white duration-700 -translate-x-full bg-sky-600 group-hover:translate-x-0 ease'>
                                     <MdShoppingCartCheckout className='text-4xl text-center items-center' />
                                 </span>
-                                <span class='absolute flex font-bold items-center justify-center w-full h-full dark:text-transparent dark:bg-gradient-to-tr from-blue-400 via-sky-600 to-emerald-600 bg-clip-text text-sky-600 transition-all duration-300 transform group-hover:translate-x-full ease'>
+                                <span class='absolute flex font-bold items-center justify-center w-full h-full dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 transition-all duration-300 transform group-hover:translate-x-full ease'>
                                     Checkout Now!
                                 </span>
                                 <span class='relative invisible font-bold'>
@@ -78,7 +78,7 @@ const Navbar = (props) => {
                         >
                             <BiMenuAltRight
                                 size={35}
-                                className='text-sky-600 hover:scale-105 hover:-mt-2 duration-300 drop-shadow-sm dark:text-sky-300 flex justify-end'
+                                className='text-sky-600 hover:drop-shadow-sm hover:text-gray-800 dark:hover:text-cyan-400 hover:scale-105 hover:-mt-2 duration-300 drop-shadow-sm dark:text-sky-300 flex justify-end'
                             />
                         </div>
                     </li>
@@ -103,11 +103,16 @@ const Navbar = (props) => {
                     }
                 >
                     {/* OVERLAY BACKGROUND BLUR END*/}
-                    <div className='flex justify-center rounded-3xl drop-shadow-2xl dark:border-slate-800 border-b-4 px-3 dark:bg-slate-800 bg-gray-200 z-50'>
+                    <div className='flex justify-center h-[30%] rounded-3xl drop-shadow-2xl dark:border-slate-800 border-b-4 px-3 dark:bg-slate-800 bg-gray-200 z-50'>
                         <div className='mx-auto flex items-center'>
                             <img
-                                className='w-24 lg:w-32 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg'
+                                className='w-24 dark:opacity-0 lg:w-32 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
                                 src={MainLogo}
+                                alt='Queen Of Nature'
+                            ></img>
+                            <img
+                                className='w-24 lg:w-32 opacity-0 dark:opacity-100 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
+                                src={MainLogoLight}
                                 alt='Queen Of Nature'
                             ></img>
                         </div>
@@ -120,26 +125,26 @@ const Navbar = (props) => {
                     <nav>
                         <div className='bg-gray-100 dark:bg-slate-800 py-5 lg:pt-10 z-50'>
                             <ul className='flex flex-row gap-10 pt-5 pb-10 text-gray-800 justify-evenly font-semibold'>
-                                <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 via-sky-600 to-emerald-600 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-sky-500 drop-shadow-sm'>
+                                <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BiCategoryAlt className='dark:text-blue-400' />
                                     <Link to='/productlist'>Category</Link>
                                 </li>
-                                <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 via-sky-600 to-emerald-600 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-sky-500 drop-shadow-sm'>
+                                <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BsBoxSeam className='dark:text-blue-400' />
                                     <Link to='/productlist'>Product</Link>
                                 </li>
-                                <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 via-sky-600 to-emerald-600 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-sky-500 drop-shadow-sm'>
+                                <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BsTelephone className='dark:text-blue-400' />
                                     <Link to='/productlist'>Contact</Link>
                                 </li>
                             </ul>
                             <div className='flex justify-center items-center pt-4'>
                                 <Link to='/order-with'>
-                                    <div class='relative inline-flex items-center justify-center px-5 py-2 overflow-hidden font-medium text-sky-600 transition duration-700 ease-out border-2  dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 via-sky-600 to-emerald-600 bg-clip-text border-sky-600 rounded-full shadow-md group'>
-                                        <span class='absolute inset-0 flex items-center justify-center w-full h-full dark:text-slate-700 dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 via-sky-600 to-emerald-600 bg-clip-content dark:drop-shadow-sm text-white duration-700 -translate-x-full bg-sky-600 group-hover:translate-x-0 ease'>
+                                    <div class='relative inline-flex items-center justify-center px-5 py-2 overflow-hidden font-medium text-sky-600 transition duration-700 ease-out border-2  dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text border-sky-600 rounded-full shadow-md group'>
+                                        <span class='absolute inset-0 flex items-center justify-center w-full h-full dark:text-slate-700 dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-content dark:drop-shadow-sm text-white duration-700 -translate-x-full bg-sky-600 group-hover:translate-x-0 ease'>
                                             <MdShoppingCartCheckout className='text-4xl text-center items-center' />
                                         </span>
-                                        <span class='absolute flex font-bold items-center justify-center w-full h-full dark:text-transparent dark:bg-gradient-to-tr from-blue-400 via-sky-600 to-emerald-600 bg-clip-text text-sky-600 transition-all duration-300 transform group-hover:translate-x-full ease'>
+                                        <span class='absolute flex font-bold items-center justify-center w-full h-full dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 transition-all duration-300 transform group-hover:translate-x-full ease'>
                                             Checkout Now!
                                         </span>
                                         <span class='relative invisible font-bold'>
