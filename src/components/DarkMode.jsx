@@ -34,7 +34,7 @@ const DarkMode = (props) => {
                 <span class='relative  px-2 py-2 transition-all ease-out dark:bg-slate-300 bg-slate-800  rounded-full group-hover:bg-opacity-0 duration-400'>
                     <div className='flex gap-5 items-center flex-col justify-center'>
                         <BsSunFill className='text-slate-200 dark:text-slate-700 text-sm lg:text-2xl' />
-                        <div className='h-0.5 w-5 bg-slate-200 dark:bg-slate-700 flex items-center justify-center fixed mx-2'></div>
+                        <div className='h-0.5 w-5 bg-slate-200 dark:bg-slate-700 flex items-center justify-center absolute mx-2'></div>
                         <BsFillMoonStarsFill className='text-slate-200 dark:text-slate-700 text-sm lg:text-2xl' />
                     </div>
                 </span>

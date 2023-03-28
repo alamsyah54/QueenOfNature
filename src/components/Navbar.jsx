@@ -19,9 +19,9 @@ const Navbar = (props) => {
         <div className='w-full fixed top-0 left-0 z-50'>
             <div>
                 {/* NAVBAR BUTTON START */}
-                <ul className='flex py-6 backdrop-blur justify-between rounded-b-3xl drop-shadow-2xl border-white/10 border-b-4'>
-                    <li className='px-10 py-5 w-[500px] flex justify-start items-center'>
-                        <ul className='invisible md:visible lg:visible flex items-center lg:gap-6 md:gap-4 font-sans font-semibold cursor-pointer text-base lg:text-2xl'>
+                <ul className='flex py-6 backdrop-blur bg-white/50 dark:bg-black/50 justify-between rounded-b-[40px] drop-shadow-2xl border-white/20 border-b-2'>
+                    <li className='px-10 py-5 w-[500px] flex justify-start items-center cursor-pointer'>
+                        <ul className='invisible md:visible lg:visible flex items-center lg:gap-6 md:gap-4'>
                             <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
                                 <BiCategoryAlt className='dark:text-sky-600' />
                                 <Link to='/productlist'>Category</Link>
@@ -98,12 +98,12 @@ const Navbar = (props) => {
                 <div
                     className={
                         nav
-                            ? "fixed bottom-0 justify-center left-0 right-0  w-full h-[35%] items-center drop-shadow-2xl dark:bg-slate-800 bg-gray-200 z-50 rounded-t-3xl "
+                            ? "fixed bottom-0 justify-center left-0 right-0  w-full h-[35%] items-center drop-shadow-2xl dark:bg-slate-800 bg-gray-200 z-50 rounded-t-[40px] "
                             : "fixed bottom-[-100%] left-0 w-[300px] h-screen dark:bg-slate-800 bg-gray-200 z-50 duration-1000"
                     }
                 >
                     {/* OVERLAY BACKGROUND BLUR END*/}
-                    <div className='flex justify-center h-[30%] rounded-3xl drop-shadow-2xl dark:border-slate-800 border-b-4 px-3 dark:bg-slate-800 bg-gray-200 z-50'>
+                    <div className='flex justify-center h-[30%] rounded-3xl drop-shadow-2xl dark:border-slate-800 border-b-[40%] px-3 dark:bg-slate-800 bg-gray-200 z-50'>
                         <div className='mx-auto flex items-center'>
                             <img
                                 className='w-24 dark:opacity-0 lg:w-32 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
@@ -123,7 +123,7 @@ const Navbar = (props) => {
                         />
                     </div>
                     <nav>
-                        <div className='bg-gray-100 dark:bg-slate-800 py-5 lg:pt-10 z-50'>
+                        <div className='bg-gray-100 dark:bg-slate-800 duration-1000 py-5 lg:pt-10 z-50'>
                             <ul className='flex flex-row gap-10 pt-5 pb-10 text-gray-800 justify-evenly font-semibold'>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BiCategoryAlt className='dark:text-blue-400' />

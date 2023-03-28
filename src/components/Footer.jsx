@@ -6,18 +6,19 @@ import { RiInstagramFill } from "react-icons/ri"
 
 const Footer = (props) => {
     return (
-        <div>
+        <div className='relative bottom-0 left-0'>
             <footer class='bg-white dark:bg-slate-700 border-t-2 border-slate-300 dark:border-slate-500'>
                 <div class='mx-auto w-full container p-6 sm:p-6'>
                     <div class='md:flex md:justify-between mt-9'>
+                        {/* BRAND DESCRIPTION START*/}
                         <div class='flex flex-col mb-7'>
-                            <Link to='/' class='flex items-center mb-5'>
+                            <Link to='/' class='flex items-start mb-5'>
                                 <img
                                     className='bg-local w-24 lg:w-32 duration-300'
                                     src={QueenCrown}
                                     alt='Queen Of Nature'
                                 />
-                                <div className='mx-7'>
+                                <div className='mx-7 items-center'>
                                     <span class='flex mb-2 text-2xl lg:text-4xl font-bold text-sky-600 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
                                         Queen Of Nature
                                     </span>
@@ -31,6 +32,9 @@ const Footer = (props) => {
                                 </div>
                             </Link>
                         </div>
+                        {/* BRAND DESCRIPTION END*/}
+
+                        {/* FOOTER TEXT START */}
                         <div class='grid grid-cols-2 gap-10 sm:gap-7 sm:grid-cols-3'>
                             <div className='text'>
                                 <h2 class='mb-6 text-sm font-bold text-slate-500 uppercase dark:text-white'>
@@ -80,6 +84,7 @@ const Footer = (props) => {
                                         <a
                                             href='https://goo.gl/maps/ia6fSjwQTuhFUYzs8'
                                             class='hover:underline'
+                                            target='blank'
                                         >
                                             52 Soi Inthayongyot 2, <br />
                                             Amphoe Mueang, <br />
@@ -129,7 +134,9 @@ const Footer = (props) => {
                             </div>
                         </div>
                     </div>
+                    {/* FOOTER TEXT END */}
 
+                    {/* FOOTER COPYRIGHT & SOCIAL MEDIA ICON */}
                     <hr class='my-6 border-slate-300 sm:mx-auto dark:border-slate-500 lg:my-8 h-2' />
                     <div class='sm:flex sm:items-center sm:justify-between'>
                         <span class='text-sm text-gray-500 sm:text-center dark:text-gray-400'>
@@ -166,6 +173,7 @@ const Footer = (props) => {
                             </a>
                         </div>
                     </div>
+                    {/* FOOTER COPYRIGHT & SOCIAL MEDIA ICON */}
                 </div>
             </footer>
         </div>

@@ -6,13 +6,11 @@ import Footer from "./components/Footer"
 import HeroSection from "./UI/HeroSection"
 function App() {
     return (
-        <div className='p-0 overflow-hidden'>
+        <div className='p-0 overflow-hidden bg-slate-200 dark:bg-gray-900'>
+            <BackgroundGradient className='' />
             <Navbar />
-            <div className='h-screen bg-gray-100 dark:bg-slate-900 flex justify-center items-center'>
-                <HeroSection />
-                <BackgroundGradient />
-                <DarkMode />
-            </div>
+            <HeroSection />
+            <DarkMode />
             <Footer />
         </div>
     )
