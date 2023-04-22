@@ -3,18 +3,16 @@ import { AiFillCloseCircle } from "react-icons/ai"
 import { BiMenuAltRight, BiCategoryAlt } from "react-icons/bi"
 import { MdShoppingCartCheckout } from "react-icons/md"
 import { BsBoxSeam, BsTelephone } from "react-icons/bs"
+import { SlHome } from "react-icons/sl"
 import MainLogo from "../assets/images/MainLogo.webp"
 import MainLogoLight from "../assets/images/MainLogoLight.webp"
 import { Link } from "react-router-dom"
 import CheckoutButton from "./CheckoutButton"
 
-const Navbar = (props) => {
+const Navbar = () => {
     const [nav, setNav] = useState(false)
     const handleNav = () => {
         setNav(!nav)
-    }
-    const handleThemeSwitch = () => {
-        setTheme(theme === "dark" ? "light" : "dark")
     }
     return (
         <div className='w-full fixed top-0 left-0 z-50'>
@@ -23,6 +21,10 @@ const Navbar = (props) => {
                 <ul className='flex py-6 backdrop-blur bg-white/50 dark:bg-black/50 justify-between rounded-b-[40px] drop-shadow-2xl border-white/20 border-b-2'>
                     <li className='px-10 py-5 w-[500px] flex justify-start items-center cursor-pointer'>
                         <ul className='invisible md:visible lg:visible flex items-center lg:gap-6 md:gap-4'>
+                            <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
+                                <SlHome className='dark:text-sky-600' />
+                                <Link to='/'>Home</Link>
+                            </li>
                             <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
                                 <BiCategoryAlt className='dark:text-sky-600' />
                                 <Link to='/productlist'>Category</Link>
@@ -39,13 +41,15 @@ const Navbar = (props) => {
                     </li>
 
                     {/* NAVBAR BRAND LOGO START */}
-                    <li className='p-2 max-w-60 flex items-center'>
-                        <Link to='/'>
+                    <li className='p-2 max-w-60 flex items-center cursor-pointer'>
+                        <Link to='/' className='cursor-pointer'>
                             <img
                                 className='duration-300 w-24 dark:opacity-0 lg:w-32 md:w-28 lg:flex lg:justify-center lg:items-center fixed top-7 left-7 lg:top-6 md:top-6 lg:left-[48%] md:left-[48%]'
                                 src={MainLogo}
                                 alt='Queen Of Nature'
                             ></img>
+                        </Link>
+                        <Link to='/' className='cursor-pointer'>
                             <img
                                 className='duration-300 opacity-0 dark:opacity-100  w-24 lg:w-32 md:w-28 lg:flex lg:justify-center lg:items-center fixed top-7 left-7 lg:top-6 md:top-6 lg:left-[48%] md:left-[48%]'
                                 src={MainLogoLight}
@@ -55,22 +59,21 @@ const Navbar = (props) => {
                     </li>
                     {/* NAVBAR BRAND LOGO END */}
 
-                    <li className='px-10 w-[500px] flex justify-end text-end items-center py-4 absolute right-0'>
-                        {/* <div className='invisible lg:visible md:visible rounded-full drop-shadow cursor-pointer dark:border-gray-200 hover:drop-shadow-lg px-3 hover:scale-105 hover:-mt-2 duration-300 hover:text-white hover:bg-sky-600 border-sky-600 border-2 py-1 text-sky-600 font-semibold'>
-                            <Link to='/order-with'>Order Now</Link>
-                        </div> */}
-                        <CheckoutButton>Checkout Now!</CheckoutButton>
+                    <Link to='/'>
+                        <li className='px-10 w-[500px] flex justify-end text-end items-center py-4 absolute right-0 cursor-pointer'>
+                            <CheckoutButton>Checkout Now!</CheckoutButton>
+                            <div
+                                onClick={handleNav}
+                                className='cursor-pointer flex justify-end items-center md:hidden lg:hidden'
+                            >
+                                <BiMenuAltRight
+                                    size={35}
+                                    className='text-sky-600 hover:drop-shadow-sm hover:text-gray-800 dark:hover:text-cyan-400 hover:scale-105 hover:-mt-2 duration-300 drop-shadow-sm dark:text-sky-300 flex justify-end'
+                                />
+                            </div>
+                        </li>
+                    </Link>
 
-                        <div
-                            onClick={() => setNav(!nav)}
-                            className='cursor-pointer flex justify-end items-center md:hidden lg:hidden'
-                        >
-                            <BiMenuAltRight
-                                size={35}
-                                className='text-sky-600 hover:drop-shadow-sm hover:text-gray-800 dark:hover:text-cyan-400 hover:scale-105 hover:-mt-2 duration-300 drop-shadow-sm dark:text-sky-300 flex justify-end'
-                            />
-                        </div>
-                    </li>
                     {/* NAVBAR BUTTON END */}
                 </ul>
 
@@ -93,17 +96,21 @@ const Navbar = (props) => {
                 >
                     {/* OVERLAY BACKGROUND BLUR END*/}
                     <div className='flex justify-center h-[30%] rounded-3xl drop-shadow-2xl dark:border-slate-800 border-b-[40%] px-3 dark:bg-slate-800 bg-gray-200 z-50'>
-                        <div className='mx-auto flex items-center'>
-                            <img
-                                className='w-24 dark:opacity-0 lg:w-32 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
-                                src={MainLogo}
-                                alt='Queen Of Nature'
-                            ></img>
-                            <img
-                                className='w-24 lg:w-32 opacity-0 dark:opacity-100 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
-                                src={MainLogoLight}
-                                alt='Queen Of Nature'
-                            ></img>
+                        <div className='mx-auto flex items-center cursor-pointer'>
+                            <Link to='/' className='cursor-pointer'>
+                                <img
+                                    className='w-24 dark:opacity-0 lg:w-32 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
+                                    src={MainLogo}
+                                    alt='Queen Of Nature'
+                                ></img>
+                            </Link>
+                            <Link to='/' className='cursor-pointer'>
+                                <img
+                                    className='w-24 lg:w-32 opacity-0 dark:opacity-100 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
+                                    src={MainLogoLight}
+                                    alt='Queen Of Nature'
+                                ></img>
+                            </Link>
                         </div>
                         <AiFillCloseCircle
                             onClick={() => setNav(!nav)}
@@ -113,11 +120,17 @@ const Navbar = (props) => {
                     </div>
                     <nav>
                         <div className='bg-gray-100 dark:bg-slate-800 duration-1000 py-5 lg:pt-10 z-50'>
-                            <ul className='flex flex-row gap-10 pt-5 pb-10 text-gray-800 justify-evenly font-semibold'>
+                            <ul className='flex flex-row gap-10 text-gray-800 justify-evenly font-semibold'>
+                                <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
+                                    <SlHome className='dark:text-blue-400' />
+                                    <Link to='/productlist'>Home</Link>
+                                </li>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BiCategoryAlt className='dark:text-blue-400' />
                                     <Link to='/productlist'>Category</Link>
                                 </li>
+                            </ul>
+                            <ul className='flex flex-row gap-10 pt-5 pb-10 text-gray-800 justify-evenly font-semibold'>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BsBoxSeam className='dark:text-blue-400' />
                                     <Link to='/productlist'>Product</Link>

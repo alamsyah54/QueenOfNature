@@ -12,4 +12,7 @@
     .animation-delay-8000 {
         animation-delay: 8s;
     }
+    .hero-delay {
+        animation-delay: 12s;
+    }
 }

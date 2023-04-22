@@ -6,7 +6,8 @@ import Footer from "../components/Footer"
 import HeroSection from "../UI/HeroSection"
 import CategorySection from "../UI/CategorySection"
 import Carousel from "../components/Carousel"
-function Home() {
+import Faq from "../components/Faq"
+const Home = () => {
     return (
         <div className='p-0 overflow-hidden bg-slate-200 dark:bg-gray-900'>
             <BackgroundGradient />
@@ -15,6 +16,7 @@ function Home() {
             <CategorySection />
             <DarkMode />
             <Carousel />
+            <Faq />
             <Footer />
         </div>
     )

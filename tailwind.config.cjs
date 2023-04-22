@@ -6,6 +6,7 @@ module.exports = {
         extend: {
             animation: {
                 blob: "blob infinite 7s",
+                hero: "hero infinite",
             },
             keyframes: {
                 blob: {
@@ -17,6 +18,20 @@ module.exports = {
                     },
                     "66%": {
                         transform: " translate(-20px, 20px) scale(0.9)",
+                    },
+                    "100%": {
+                        transform: " translate(0px, 0px) scale(1)",
+                    },
+                },
+                hero: {
+                    "0%": {
+                        transform: " translate(0px, 0px) scale(1)",
+                    },
+                    "33%": {
+                        transform: " translate(10px, -10px) scale(1.1)",
+                    },
+                    "66%": {
+                        transform: " translate(-20px, 10px) scale(0.9)",
                     },
                     "100%": {
                         transform: " translate(0px, 0px) scale(1)",
