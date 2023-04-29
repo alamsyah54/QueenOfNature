@@ -5,76 +5,9 @@ import DarkMode from "../components/DarkMode"
 import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
 import { Button } from "@material-tailwind/react"
-import BestSeller1 from "../assets/images/bestseller1.png"
-import BestSeller2 from "../assets/images/bestseller2.png"
-import BestSeller4 from "../assets/images/bestseller4.png"
+import { products } from "../data/Data"
 
 const ProductList = () => {
-    const product = [
-        {
-            price: "฿70",
-            desc: "แชมพูมะกรูด บำรุงหนังศีรษะ ลดอาการคัน มีส่วนผสมของน้ำมันหอมระเหยกลิ่นมะกรูด ให้ความรู้สึกสดชื่น หายใจโล่งสบาย",
-            number: 1,
-            title: "Kaffir Lime Shampoo",
-            image: BestSeller1,
-        },
-        {
-            price: "฿70",
-            desc: "โลชั่นบำรุงผิวกลิ่นดอกมะลิ น้ำมันหอมระเหยให้กลิ่นมะลิหอมสดชื่น ทำให้ผ่อนคลาย ความเครียด ช่วยให้นอนหลับสบาย",
-            number: 2,
-            title: "Jasmine Lotion",
-            image: BestSeller2,
-        },
-        {
-            price: "฿70",
-            desc: "โลชั่นบำรุงผิวกลิ่นน้ำนมข้าว น้ำมันหอมระเหยให้กลิ่นน้ำนมข้าวละมุน อ่อนหวาน และอบอุ่น ทำให้ผ่อนคลาย ช่วยให้นอนหลับสบาย",
-            number: 3,
-            title: "Nourishing Rice Lotion",
-            image: BestSeller4,
-        },
-        {
-            price: "฿70",
-            desc: "แชมพูมะกรูด บำรุงหนังศีรษะ ลดอาการคัน มีส่วนผสมของน้ำมันหอมระเหยกลิ่นมะกรูด ให้ความรู้สึกสดชื่น หายใจโล่งสบาย",
-            number: 1,
-            title: "Kaffir Lime Shampoo",
-            image: BestSeller1,
-        },
-        {
-            price: "฿70",
-            desc: "โลชั่นบำรุงผิวกลิ่นดอกมะลิ น้ำมันหอมระเหยให้กลิ่นมะลิหอมสดชื่น ทำให้ผ่อนคลาย ความเครียด ช่วยให้นอนหลับสบาย",
-            number: 2,
-            title: "Jasmine Lotion",
-            image: BestSeller2,
-        },
-        {
-            price: "฿70",
-            desc: "โลชั่นบำรุงผิวกลิ่นน้ำนมข้าว น้ำมันหอมระเหยให้กลิ่นน้ำนมข้าวละมุน อ่อนหวาน และอบอุ่น ทำให้ผ่อนคลาย ช่วยให้นอนหลับสบาย",
-            number: 3,
-            title: "Nourishing Rice Lotion",
-            image: BestSeller4,
-        },
-        {
-            price: "฿70",
-            desc: "แชมพูมะกรูด บำรุงหนังศีรษะ ลดอาการคัน มีส่วนผสมของน้ำมันหอมระเหยกลิ่นมะกรูด ให้ความรู้สึกสดชื่น หายใจโล่งสบาย",
-            number: 1,
-            title: "Kaffir Lime Shampoo",
-            image: BestSeller1,
-        },
-        {
-            price: "฿70",
-            desc: "โลชั่นบำรุงผิวกลิ่นดอกมะลิ น้ำมันหอมระเหยให้กลิ่นมะลิหอมสดชื่น ทำให้ผ่อนคลาย ความเครียด ช่วยให้นอนหลับสบาย",
-            number: 2,
-            title: "Jasmine Lotion",
-            image: BestSeller2,
-        },
-        {
-            price: "฿70",
-            desc: "โลชั่นบำรุงผิวกลิ่นน้ำนมข้าว น้ำมันหอมระเหยให้กลิ่นน้ำนมข้าวละมุน อ่อนหวาน และอบอุ่น ทำให้ผ่อนคลาย ช่วยให้นอนหลับสบาย",
-            number: 3,
-            title: "Nourishing Rice Lotion",
-            image: BestSeller4,
-        },
-    ]
     return (
         <div className='p-0 overflow-hidden bg-slate-200 dark:bg-gray-900'>
             <BackgroundGradient />
@@ -91,8 +24,11 @@ const ProductList = () => {
                     </div>
                 </div>
                 <div className='px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7'>
-                    {product.map((product) => (
-                        <div className='relative rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-lg  w-full !p-4 3xl:p-![18px] '>
+                    {products.map((product) => (
+                        <div
+                            key={product.id}
+                            className='relative rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-lg  w-full !p-4 3xl:p-![18px] '
+                        >
                             <div className='h-full w-full'>
                                 <div className='relative w-full'>
                                     <span className='absolute z-10 left-3 top-2 lg:text-lg lg:left-4 text-sm font-semibold text-white/30'>
@@ -126,7 +62,7 @@ const ProductList = () => {
                                     </span>
                                     <div className='mb-2'>
                                         <p className='text-2xl font-bold text-navy-700 dark:text-gray-100 lg:py-2 pt-5'>
-                                            {product.title}
+                                            {product.name}
                                         </p>
                                         <p className='mt-2 text-sm font-medium text-gray-600 md:mt-3 text-start dark:text-gray-300'>
                                             {product.desc}
@@ -135,11 +71,11 @@ const ProductList = () => {
                                 </div>
                                 <div className='flex items-end justify-between '>
                                     <div className='lg:text-4xl text-3xl p-2 font-bold dark:text-gray-100'>
-                                        {product.price}
+                                        ฿{product.price}
                                     </div>
-                                    <Link to='/'>
+                                    <Link to={`/productlist/${product.id}`}>
                                         <Button className='hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100 hover:text-gray-900 active:bg-gray-400 dark:text-gray-200 border-gray-400 text-gray-800 bg-gray-200 dark:bg-gray-700 font-medium rounded-xl capitalize text-sm px-5 py-2 text-center m-1 border-2'>
-                                            Buy Now
+                                            More Details
                                         </Button>
                                     </Link>
                                 </div>
@@ -148,7 +84,6 @@ const ProductList = () => {
                     ))}
                 </div>
             </section>
-            <section className='py-10 flex justify-center'></section>
             <DarkMode />
             <Footer />
         </div>

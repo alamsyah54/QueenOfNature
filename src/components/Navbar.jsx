@@ -19,7 +19,7 @@ const Navbar = () => {
             <div>
                 {/* NAVBAR BUTTON START */}
                 <ul className='flex py-6 backdrop-blur bg-white/50 dark:bg-black/50 justify-between rounded-b-[40px] drop-shadow-2xl border-white/20 border-b-2'>
-                    <li className='px-10 py-5 w-[500px] flex justify-start items-center cursor-pointer'>
+                    <li className='px-10 py-5 flex justify-start items-center'>
                         <ul className='invisible md:visible lg:visible flex items-center lg:gap-6 md:gap-4'>
                             <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
                                 <SlHome className='dark:text-sky-600' />
@@ -59,20 +59,18 @@ const Navbar = () => {
                     </li>
                     {/* NAVBAR BRAND LOGO END */}
 
-                    <Link to='/'>
-                        <li className='px-10 w-[500px] flex justify-end text-end items-center py-4 absolute right-0 cursor-pointer'>
-                            <CheckoutButton>Checkout Now!</CheckoutButton>
-                            <div
-                                onClick={handleNav}
-                                className='cursor-pointer flex justify-end items-center md:hidden lg:hidden'
-                            >
-                                <BiMenuAltRight
-                                    size={35}
-                                    className='text-sky-600 hover:drop-shadow-sm hover:text-gray-800 dark:hover:text-cyan-400 hover:scale-105 hover:-mt-2 duration-300 drop-shadow-sm dark:text-sky-300 flex justify-end'
-                                />
-                            </div>
-                        </li>
-                    </Link>
+                    <li className='px-10 flex justify-end text-end items-center py-4 absolute right-0 cursor-pointer'>
+                        <CheckoutButton>Checkout Now!</CheckoutButton>
+                        <div
+                            onClick={handleNav}
+                            className='cursor-pointer flex justify-end items-center md:hidden lg:hidden'
+                        >
+                            <BiMenuAltRight
+                                size={35}
+                                className='text-sky-600 hover:drop-shadow-sm hover:text-gray-800 dark:hover:text-cyan-400 hover:scale-105 hover:-mt-2 duration-300 drop-shadow-sm dark:text-sky-300 flex justify-end'
+                            />
+                        </div>
+                    </li>
 
                     {/* NAVBAR BUTTON END */}
                 </ul>
@@ -95,22 +93,27 @@ const Navbar = () => {
                     }
                 >
                     {/* OVERLAY BACKGROUND BLUR END*/}
-                    <div className='flex justify-center h-[30%] rounded-3xl drop-shadow-2xl dark:border-slate-800 border-b-[40%] px-3 dark:bg-slate-800 bg-gray-200 z-50'>
+                    <div
+                        animate={{
+                            mount: { scale: 0.8, y: 0 },
+                            unmount: { scale: 0.9, y: -100 },
+                        }}
+                        className='flex justify-center h-[30%] rounded-3xl drop-shadow-2xl dark:border-slate-800 border-b-[40%] px-3 dark:bg-slate-800 bg-gray-200 z-50'
+                    >
                         <div className='mx-auto flex items-center cursor-pointer'>
                             <Link to='/' className='cursor-pointer'>
                                 <img
                                     className='w-24 dark:opacity-0 lg:w-32 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
                                     src={MainLogo}
                                     alt='Queen Of Nature'
-                                ></img>
-                            </Link>
-                            <Link to='/' className='cursor-pointer'>
+                                />
                                 <img
                                     className='w-24 lg:w-32 opacity-0 dark:opacity-100 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
                                     src={MainLogoLight}
                                     alt='Queen Of Nature'
-                                ></img>
+                                />
                             </Link>
+                            <Link to='/' className='cursor-pointer'></Link>
                         </div>
                         <AiFillCloseCircle
                             onClick={() => setNav(!nav)}
@@ -123,11 +126,11 @@ const Navbar = () => {
                             <ul className='flex flex-row gap-10 text-gray-800 justify-evenly font-semibold'>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <SlHome className='dark:text-blue-400' />
-                                    <Link to='/productlist'>Home</Link>
+                                    <Link to='/'>Home</Link>
                                 </li>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BiCategoryAlt className='dark:text-blue-400' />
-                                    <Link to='/productlist'>Category</Link>
+                                    <Link to='/category'>Category</Link>
                                 </li>
                             </ul>
                             <ul className='flex flex-row gap-10 pt-5 pb-10 text-gray-800 justify-evenly font-semibold'>
@@ -137,7 +140,7 @@ const Navbar = () => {
                                 </li>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BsTelephone className='dark:text-blue-400' />
-                                    <Link to='/productlist'>Contact</Link>
+                                    <Link to='/contact'>Contact</Link>
                                 </li>
                             </ul>
                             <div className='flex justify-center items-center pt-4'>

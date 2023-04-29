@@ -13,9 +13,9 @@ const Home = () => {
             <BackgroundGradient />
             <Navbar />
             <HeroSection />
+            <Carousel />
             <CategorySection />
             <DarkMode />
-            <Carousel />
             <Faq />
             <Footer />
         </div>

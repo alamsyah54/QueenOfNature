@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { BsFacebook, BsLine } from "react-icons/bs"
 import { RiInstagramFill } from "react-icons/ri"
 
-const Footer = (props) => {
+const Footer = () => {
     return (
         <div className='relative bottom-0 left-0'>
             <footer class='bg-white dark:bg-slate-700 border-t-2 border-slate-300 dark:border-slate-500'>
@@ -19,9 +19,14 @@ const Footer = (props) => {
                                     alt='Queen Of Nature'
                                 />
                                 <div className='mx-7 items-center'>
-                                    <span class='flex mb-2 text-2xl lg:text-4xl font-bold text-sky-600 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
-                                        Queen Of Nature
-                                    </span>
+                                    <div className='relative mb-14'>
+                                        <span class='absolute mb-2 text-2xl lg:text-4xl font-bold text-sky-600 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text dark:blur-md'>
+                                            Queen Of Nature
+                                        </span>
+                                        <span class='absolute mb-2 text-2xl lg:text-4xl font-bold text-sky-600 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
+                                            Queen Of Nature
+                                        </span>
+                                    </div>
                                     <p className='text-gray-700 dark:text-gray-300'>
                                         Lorem Ipsum is simply dummy text of the
                                         printing and typesetting industry.

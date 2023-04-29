@@ -1,41 +1,10 @@
 import React from "react"
-import Shampoo from "../assets/images/shampoo.jpg"
-import Lotion from "../assets/images/lotion.jpg"
-import Oil from "../assets/images/oil.jpg"
-import Spray from "../assets/images/spray.jpg"
-import Soap from "../assets/images/soap.jpg"
 import { Link } from "react-router-dom"
+import { categories } from "../data/Data"
 
 const CategorySection = () => {
-    const category = [
-        {
-            title: "Shampoo",
-            image: Shampoo,
-            url: "/category",
-        },
-        {
-            title: "Shampoo",
-            image: Lotion,
-            url: "/category",
-        },
-        {
-            title: "Shampoo",
-            image: Oil,
-            url: "/category",
-        },
-        {
-            title: "Shampoo",
-            image: Spray,
-            url: "/category",
-        },
-        {
-            title: "Shampoo",
-            image: Soap,
-            url: "/category",
-        },
-    ]
     return (
-        <div className='border-t-2 border-sky-500'>
+        <>
             <div className='text-sky-600 text-start py-10 mx-14 font-semibold text-3xl md:text-4xl lg:text-5xl dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
                 <span className='text-4xl'>Category</span>
                 <div className='flex items-center drop-shadow'>
@@ -44,11 +13,11 @@ const CategorySection = () => {
                 </div>
             </div>
             <section className='py-10 flex justify-center'>
-                <div className='gap-5 lg:gap-10 grid grid-cols-2 md:grid-cols-3 lg:flex'>
-                    {category.map((category) => (
+                <div className='sm:gap-5 gap-5 lg:gap-10 grid grid-cols-2 md:grid-cols-3 lg:flex'>
+                    {categories.map((category) => (
                         <Link to='/'>
                             <div
-                                className='group bg-cover cursor-pointer group bg-center w-52 h-52 lg:w-64 lg:h-64 rounded-3xl shadow-inner drop-shadow-2xl hover:scale-110 hover:rotate-2 duration-700 overflow-hidden'
+                                className='group bg-cover cursor-pointer group bg-center w-44 h-44 md:w-52 md:h-52 lg:w-64 lg:h-64 rounded-3xl shadow-inner drop-shadow-xl hover:scale-110 hover:rotate-2 duration-700 overflow-hidden'
                                 style={{
                                     backgroundImage: `url(${category.image})`,
                                 }}
@@ -61,7 +30,7 @@ const CategorySection = () => {
                     ))}
                 </div>
             </section>
-        </div>
+        </>
     )
 }
 

@@ -5,33 +5,9 @@ import { Link } from "react-router-dom"
 import BestSeller1 from "../assets/images/bestseller1.png"
 import BestSeller2 from "../assets/images/bestseller2.png"
 import BestSeller4 from "../assets/images/bestseller4.png"
-import { Button, Chip, IconButton } from "@material-tailwind/react"
-
+import { Button } from "@material-tailwind/react"
+import { slides } from "../data/Data"
 const Carousel = () => {
-    const slides = [
-        {
-            price: "฿70",
-            desc: "แชมพูมะกรูด บำรุงหนังศีรษะ ลดอาการคัน มีส่วนผสมของน้ำมันหอมระเหยกลิ่นมะกรูด ให้ความรู้สึกสดชื่น หายใจโล่งสบาย",
-            number: 1,
-            title: "Kaffir Lime Shampoo",
-            image: BestSeller1,
-        },
-        {
-            price: "฿70",
-            desc: "โลชั่นบำรุงผิวกลิ่นดอกมะลิ น้ำมันหอมระเหยให้กลิ่นมะลิหอมสดชื่น ทำให้ผ่อนคลาย ความเครียด ช่วยให้นอนหลับสบาย",
-            number: 2,
-            title: "Jasmine Lotion",
-            image: BestSeller2,
-        },
-        {
-            price: "฿70",
-            desc: "โลชั่นบำรุงผิวกลิ่นน้ำนมข้าว น้ำมันหอมระเหยให้กลิ่นน้ำนมข้าวละมุน อ่อนหวาน และอบอุ่น ทำให้ผ่อนคลาย ช่วยให้นอนหลับสบาย",
-            number: 3,
-            title: "Nourishing Rice Lotion",
-            image: BestSeller4,
-        },
-    ]
-
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const prevSlide = () => {
@@ -59,15 +35,15 @@ const Carousel = () => {
                     <span className='w-[160px] h-[2px] bg-gray-600 dark:bg-gray-300 block mt-3'></span>
                 </div>
             </div>
-            <div className='max-w-[1400px] h-[780px] w-full m-auto py-16 px-5 relative group'>
+            <div className='max-w-full m-auto py-5 lg:px-[10%] md:px-[20%] px-[10%] relative group'>
                 <div
                     style={{
                         backgroundImage: `url(${slides[currentIndex].image})`,
                     }}
                     className='flex justify-center items-center w-full h-full rounded-3xl bg-center bg-cover duration-500 drop-shadow-sm group-hover:drop-shadow-lg'
                 >
-                    <div className='flex flex-col justify-center items-center h-[80%] z-50 drop-shadow-sm'>
-                        <div className='!z-5 relative flex flex-col rounded-3xl max-w-[70%] md:max-w-[60%] lg:max-w-[40%] dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-lg  w-full !p-4 3xl:p-![18px] '>
+                    <div className='relative flex flex-col justify-center items-center h-[500px] lg:h-[650px] py-24 z-50 drop-shadow-sm'>
+                        <div className='rounded-3xl max-w-[70%] md:max-w-[60%] lg:max-w-[40%] dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-lg p-4 '>
                             <div className='h-full w-full'>
                                 <div className='relative w-full'>
                                     <span className='absolute z-10 left-3 top-2 lg:text-lg lg:left-4 text-sm font-semibold text-white/20'>
@@ -100,37 +76,44 @@ const Carousel = () => {
                                         </span>
                                     </span>
                                     <div className='mb-2'>
-                                        <p className='text-2xl font-bold text-navy-700 dark:text-gray-100 lg:py-2 pt-5'>
+                                        <p className='text-lg lg:text-xl font-bold text-navy-700 dark:text-gray-100 lg:py-2 pt-5'>
                                             {slides[currentIndex].title}
                                         </p>
-                                        <p className='mt-2 text-sm font-medium text-gray-600 md:mt-3 text-start dark:text-gray-300'>
+                                        <p className='mt-2 text-xs lg:text-sm font-medium text-gray-600 md:mt-3 text-start dark:text-gray-300'>
                                             {slides[currentIndex].desc}
                                         </p>
                                     </div>
                                 </div>
                                 <div className='flex items-end justify-between '>
-                                    <div className='lg:text-4xl text-3xl p-2 font-bold dark:text-gray-100'>
+                                    <div className='lg:text-3xl text-2xl p-2 font-bold dark:text-gray-100'>
                                         {slides[currentIndex].price}
                                     </div>
                                     <Link to='/'>
-                                        <Button className='hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100 hover:text-gray-900 active:bg-gray-400 dark:text-gray-200 border-gray-400 text-gray-800 bg-gray-200 dark:bg-gray-700 font-medium rounded-xl capitalize text-sm px-5 py-2 text-center m-1 border-2'>
-                                            Buy Now
+                                        <Button className='hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100 hover:text-gray-900 active:bg-gray-400 dark:text-gray-200 border-gray-400 text-gray-800 bg-gray-200 dark:bg-gray-700 font-medium lg:rounded-xl rounded-lg capitalize text-xs px-3 py-1 lg:px-4 lg:py-2 text-center m-1 border-2'>
+                                            More Details
                                         </Button>
                                     </Link>
                                 </div>
                             </div>
                         </div>
+                        {/* Left Arrow */}
+                        <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/30 hover:scale-110 duration-700 text-white cursor-pointer -mx-3'>
+                            <BsChevronCompactLeft
+                                onClick={prevSlide}
+                                size={20}
+                            />
+                        </div>
+                        {/* Right Arrow */}
+                        <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/30 hover:scale-110 duration-700 text-white cursor-pointer -mx-3'>
+                            <BsChevronCompactRight
+                                onClick={nextSlide}
+                                size={20}
+                            />
+                        </div>
                     </div>
                     <div className='absolute backdrop-blur-sm w-full h-full z-40 rounded-3xl bg-gray-500/10 dark:bg-gray-500/30'></div>
                 </div>
-                {/* Left Arrow */}
-                <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/30 hover:scale-110 duration-700 text-white cursor-pointer mx-5'>
-                    <BsChevronCompactLeft onClick={prevSlide} size={20} />
-                </div>
-                {/* Right Arrow */}
-                <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/30 hover:scale-110 duration-700 text-white cursor-pointer mx-5'>
-                    <BsChevronCompactRight onClick={nextSlide} size={20} />
-                </div>
+
                 <div className='flex top-4 justify-center py-2'>
                     {slides.map((slide, slideIndex) => (
                         <div

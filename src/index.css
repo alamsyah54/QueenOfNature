@@ -16,3 +16,15 @@
         animation-delay: 12s;
     }
 }
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #347deb;
+}
