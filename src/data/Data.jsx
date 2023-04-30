@@ -1,4 +1,3 @@
-// data.jsx
 import BestSeller1 from "../assets/images/bestseller1.png"
 import BestSeller2 from "../assets/images/bestseller2.png"
 import BestSeller4 from "../assets/images/bestseller4.png"
@@ -15,7 +14,9 @@ const products = [
         desc: "แชมพูมะกรูด บำรุงหนังศีรษะ ลดอาการคัน มีส่วนผสมของน้ำมันหอมระเหยกลิ่นมะกรูด ให้ความรู้สึกสดชื่น หายใจโล่งสบาย",
         number: 1,
         name: "Kaffir Lime Shampoo",
-        image: BestSeller1,
+        mainImage: BestSeller1,
+        category: "shampoo",
+        images: [BestSeller1, Shampoo, Lotion, Spray, Soap],
     },
     {
         id: 222,
@@ -23,7 +24,9 @@ const products = [
         desc: "โลชั่นบำรุงผิวกลิ่นดอกมะลิ น้ำมันหอมระเหยให้กลิ่นมะลิหอมสดชื่น ทำให้ผ่อนคลาย ความเครียด ช่วยให้นอนหลับสบาย",
         number: 2,
         name: "Jasmine Lotion",
-        image: BestSeller2,
+        mainImage: BestSeller2,
+        category: "Lotion",
+        images: [Shampoo, Shampoo, Shampoo, Shampoo],
     },
     {
         id: 333,
@@ -31,20 +34,17 @@ const products = [
         desc: "โลชั่นบำรุงผิวกลิ่นน้ำนมข้าว น้ำมันหอมระเหยให้กลิ่นน้ำนมข้าวละมุน อ่อนหวาน และอบอุ่น ทำให้ผ่อนคลาย ช่วยให้นอนหลับสบาย",
         number: 3,
         name: "Nourishing Rice Lotion",
-        image: BestSeller4,
+        mainImage: BestSeller4,
+        category: "Lotion",
+        images: [Lotion, Lotion, Lotion, Shampoo],
     },
 ]
 
-const bestSellerProducts = [
-    // array of best seller products data
-]
+const bestSellerProducts = []
 
-const users = [
-    // array of user data
-]
+const users = []
 
 const contactInfo = {
-    // object containing contact information
     phone: "555-555-5555",
     email: "contact@example.com",
     address: "123 Main St, Anytown USA",

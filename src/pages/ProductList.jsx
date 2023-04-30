@@ -27,15 +27,15 @@ const ProductList = () => {
                     {products.map((product) => (
                         <div
                             key={product.id}
-                            className='relative rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-lg  w-full !p-4 3xl:p-![18px] '
+                            className='relative rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-lg  w-full p-4'
                         >
                             <div className='h-full w-full'>
-                                <div className='relative w-full'>
-                                    <span className='absolute z-10 left-3 top-2 lg:text-lg lg:left-4 text-sm font-semibold text-white/30'>
+                                <div className='relative w-full group'>
+                                    <span className='opacity-0 group-hover:opacity-100 duration-500 absolute z-10 left-3 top-2 lg:text-lg lg:left-4 text-sm font-semibold text-white/30'>
                                         © Queen Of Nature
                                     </span>
                                     <img
-                                        src={product.image}
+                                        src={product.mainImage}
                                         className='mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full drop-shadow-md'
                                         alt=''
                                     />

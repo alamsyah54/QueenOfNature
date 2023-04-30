@@ -2,9 +2,6 @@ import React, { useState } from "react"
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs"
 import { RxDotFilled } from "react-icons/rx"
 import { Link } from "react-router-dom"
-import BestSeller1 from "../assets/images/bestseller1.png"
-import BestSeller2 from "../assets/images/bestseller2.png"
-import BestSeller4 from "../assets/images/bestseller4.png"
 import { Button } from "@material-tailwind/react"
 import { slides } from "../data/Data"
 const Carousel = () => {
@@ -86,7 +83,7 @@ const Carousel = () => {
                                 </div>
                                 <div className='flex items-end justify-between '>
                                     <div className='lg:text-3xl text-2xl p-2 font-bold dark:text-gray-100'>
-                                        {slides[currentIndex].price}
+                                        ฿{slides[currentIndex].price}
                                     </div>
                                     <Link to='/'>
                                         <Button className='hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100 hover:text-gray-900 active:bg-gray-400 dark:text-gray-200 border-gray-400 text-gray-800 bg-gray-200 dark:bg-gray-700 font-medium lg:rounded-xl rounded-lg capitalize text-xs px-3 py-1 lg:px-4 lg:py-2 text-center m-1 border-2'>
@@ -97,33 +94,21 @@ const Carousel = () => {
                             </div>
                         </div>
                         {/* Left Arrow */}
-                        <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/30 hover:scale-110 duration-700 text-white cursor-pointer -mx-3'>
-                            <BsChevronCompactLeft
-                                onClick={prevSlide}
-                                size={20}
-                            />
+                        <div
+                            onClick={prevSlide}
+                            className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/30 hover:scale-110 duration-700 text-white cursor-pointer -mx-3'
+                        >
+                            <BsChevronCompactLeft size={20} />
                         </div>
                         {/* Right Arrow */}
-                        <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/30 hover:scale-110 duration-700 text-white cursor-pointer -mx-3'>
-                            <BsChevronCompactRight
-                                onClick={nextSlide}
-                                size={20}
-                            />
+                        <div
+                            onClick={nextSlide}
+                            className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/30 hover:scale-110 duration-700 text-white cursor-pointer -mx-3'
+                        >
+                            <BsChevronCompactRight size={20} />
                         </div>
                     </div>
                     <div className='absolute backdrop-blur-sm w-full h-full z-40 rounded-3xl bg-gray-500/10 dark:bg-gray-500/30'></div>
-                </div>
-
-                <div className='flex top-4 justify-center py-2'>
-                    {slides.map((slide, slideIndex) => (
-                        <div
-                            key={slideIndex}
-                            onClick={() => goToSlide(slideIndex)}
-                            className='text-2xl cursor-pointer my-2'
-                        >
-                            <RxDotFilled className='dark:bg-gray-300 border bg-slate-400 border-gray-200 gap-20 rounded-lg px-3 -py-2 text-xs mx-5 drop-shadow-lg hover:scale-x-125 duration-500 active:bg-gray-600' />
-                        </div>
-                    ))}
                 </div>
             </div>
         </section>

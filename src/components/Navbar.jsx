@@ -59,7 +59,7 @@ const Navbar = () => {
                     </li>
                     {/* NAVBAR BRAND LOGO END */}
 
-                    <li className='px-10 flex justify-end text-end items-center py-4 absolute right-0 cursor-pointer'>
+                    <li className='px-10 flex justify-end text-end items-center py-4 absolute right-0 cursor-pointer -z-[9999] lg:z-0'>
                         <CheckoutButton>Checkout Now!</CheckoutButton>
                         <div
                             onClick={handleNav}
@@ -153,9 +153,7 @@ const Navbar = () => {
                                             Checkout Now!
                                         </span>
                                         <span class='relative invisible font-bold'>
-                                            <Link to='/order-with'>
-                                                Checkout Now!
-                                            </Link>
+                                            Checkout Now!
                                         </span>
                                     </div>
                                 </Link>
