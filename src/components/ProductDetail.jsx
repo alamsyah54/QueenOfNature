@@ -141,9 +141,9 @@ const ProductList = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className='flex flex-row w-[100%] h-[50%] lg:h-[100%] lg:w-[50%] lg:px-5'>
-                            <div className='text-gray-900 dark:text-gray-200 justify-between flex flex-col gap-1'>
-                                <div className=''>
+                        <div className='flex flex-row w-[100%] h-[50%] lg:h-[100%] lg:w-[50%] lg:px-5 items-center justify-center'>
+                            <div className='text-gray-900 dark:text-gray-200 justify-between flex flex-col w-full h-full gap-1'>
+                                <div>
                                     <div className='lg:text-4xl text-2xl font-semibold justify-between flex'>
                                         <div className='relative'>
                                             <span className='absolute text-center font-bold dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text dark:blur-xl'>
