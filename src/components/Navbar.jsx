@@ -130,13 +130,13 @@ const Navbar = () => {
                                 </li>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BiCategoryAlt className='dark:text-blue-400' />
-                                    <Link to='/category'>Category</Link>
+                                    <Link to='/categories'>Category</Link>
                                 </li>
                             </ul>
                             <ul className='flex flex-row gap-10 pt-5 pb-10 text-gray-800 justify-evenly font-semibold'>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BsBoxSeam className='dark:text-blue-400' />
-                                    <Link to='/productlist'>Product</Link>
+                                    <Link to='/products'>Product</Link>
                                 </li>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BsTelephone className='dark:text-blue-400' />
