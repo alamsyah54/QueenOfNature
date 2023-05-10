@@ -30,17 +30,14 @@ const ProductList = () => {
                             className='relative rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-lg  w-full p-4'
                         >
                             <div className='h-full w-full'>
-                                <div className='relative w-full group'>
-                                    <span className='opacity-0 group-hover:opacity-100 duration-500 absolute z-10 left-3 top-2 lg:text-lg lg:left-4 text-sm font-semibold text-white/30'>
-                                        © Queen Of Nature
-                                    </span>
+                                <div className='flex w-full group'>
                                     <img
                                         src={product.mainImage}
                                         className='mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full drop-shadow-md'
                                         alt=''
                                     />
                                 </div>
-                                <div className='flex justify-between px-1 md:items-start'>
+                                <div className='flex justify-between px-1 self-end w-full'>
                                     <span className='absolute drop-shadow-md bg-pink-500 px-1 right-4 rounded-md font-medium text-white'>
                                         <span className='flex items-center text-sm'>
                                             <svg
@@ -69,11 +66,11 @@ const ProductList = () => {
                                         </p>
                                     </div>
                                 </div>
-                                <div className='flex items-end justify-between '>
+                                <div className='flex justify-between self-end w-full'>
                                     <div className='lg:text-4xl text-3xl p-2 font-bold dark:text-gray-100'>
                                         ฿{product.price}
                                     </div>
-                                    <Link to={`/productlist/${product.id}`}>
+                                    <Link to={`/products/${product.id}`}>
                                         <Button className='hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100 hover:text-gray-900 active:bg-gray-400 dark:text-gray-200 border-gray-400 text-gray-800 bg-gray-200 dark:bg-gray-700 font-medium rounded-xl capitalize text-sm px-5 py-2 text-center m-1 border-2'>
                                             More Details
                                         </Button>

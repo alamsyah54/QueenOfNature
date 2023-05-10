@@ -4,8 +4,8 @@ import { BiMenuAltRight, BiCategoryAlt } from "react-icons/bi"
 import { MdShoppingCartCheckout } from "react-icons/md"
 import { BsBoxSeam, BsTelephone } from "react-icons/bs"
 import { SlHome } from "react-icons/sl"
-import MainLogo from "../assets/images/MainLogo.webp"
-import MainLogoLight from "../assets/images/MainLogoLight.webp"
+import MainLogo from "../assets/images/Queen.webp"
+import MainLogoLight from "../assets/images/QueenWhite.webp"
 import { Link } from "react-router-dom"
 import CheckoutButton from "./CheckoutButton"
 
@@ -27,15 +27,15 @@ const Navbar = () => {
                             </li>
                             <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
                                 <BiCategoryAlt className='dark:text-sky-600' />
-                                <Link to='/productlist'>Category</Link>
+                                <Link to='/categories'>Category</Link>
                             </li>
                             <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
                                 <BsBoxSeam className='dark:text-sky-600' />
-                                <Link to='/productlist'>Product</Link>
+                                <Link to='/products'>Product</Link>
                             </li>
                             <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
                                 <BsTelephone className='dark:text-sky-600' />
-                                <Link to='/productlist'>Contact</Link>
+                                <Link to='/contact'>Contact</Link>
                             </li>
                         </ul>
                     </li>

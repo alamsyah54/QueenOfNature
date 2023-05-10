@@ -1,3 +1,5 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Sarabun&display=swap"); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,3 +30,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: #347deb;
 }
+
+/* * {
+    font-family: "Sarabun", sans-serif;
+} */

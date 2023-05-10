@@ -6,6 +6,9 @@ import ErrorPage from "./error-page"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import ProductList from "./pages/ProductList"
 import ProductDetail from "../src/components/ProductDetail"
+import CategoryPage from "./pages/CategoryPage"
+import ContactList from "./pages/ContactList"
+import OrderPage from "./pages/OrderPage"
 
 const router = createBrowserRouter([
     {
@@ -15,16 +18,34 @@ const router = createBrowserRouter([
         title: "Home",
     },
     {
-        path: "/productlist",
+        path: "/products",
         element: <ProductList />,
         errorElement: <ErrorPage />,
         title: "Product List",
     },
     {
-        path: "/productlist/:productId",
+        path: "/products/:productId",
         element: <ProductDetail />,
         errorElement: <ErrorPage />,
         title: "Product List",
+    },
+    {
+        path: "/categories",
+        element: <CategoryPage />,
+        errorElement: <ErrorPage />,
+        title: "Category Product",
+    },
+    {
+        path: "/contact",
+        element: <ContactList />,
+        errorElement: <ErrorPage />,
+        title: "Contact",
+    },
+    {
+        path: "/order-with",
+        element: <OrderPage />,
+        errorElement: <ErrorPage />,
+        title: "Order With",
     },
 ])
 ReactDOM.createRoot(document.getElementById("root")).render(
