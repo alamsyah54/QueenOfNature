@@ -114,7 +114,7 @@ const ProductList = () => {
                             mount: { scale: 0.8, y: 0 },
                             unmount: { scale: 0.9, y: -100 },
                         }}
-                        className='flex flex-col lg:flex-row w-[100%] h-[100%] rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-xl p-5 gap-4 lg:p-8 duration-500'
+                        className='flex flex-col lg:flex-row rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-xl p-5 gap-4 lg:p-8 duration-500'
                     >
                         <div className='flex items-center flex-col w-[100%] h-[50%] lg:h-[100%] lg:w-[50%]'>
                             <div
@@ -123,7 +123,7 @@ const ProductList = () => {
                                     backgroundImage: `url(${currentImages})`,
                                 }}
                             />
-                            <div className='flex justify-between gap-3 pt-2 lg:pt-3 w-full'>
+                            <div className='flex justify-center gap-5 pt-2 lg:pt-3 w-full'>
                                 {thisProduct.images.map((slide, slideIndex) => (
                                     <div className='overflow-clip rounded-xl group shadow-lg hover:shadow-xl duration-500 border-[2.5px] hover:border-sky-600 dark:hover:border-sky-300 border-white dark:border-gray-500'>
                                         <img
@@ -141,7 +141,7 @@ const ProductList = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className='flex flex-row w-[100%] h-[50%] lg:h-[100%] lg:w-[50%] lg:px-5 items-center justify-center'>
+                        <div className='flex flex-row w-[100%] h-[50%] lg:h-[100%] lg:w-[50%] lg:p-24 items-center justify-center'>
                             <div className='text-gray-900 dark:text-gray-200 justify-between flex flex-col w-full h-full gap-1'>
                                 <div>
                                     <div className='lg:text-4xl text-2xl font-semibold justify-between flex'>
@@ -163,8 +163,8 @@ const ProductList = () => {
                                             <div className='lg:text-2xl text-lg font-thin lg:my-16'>
                                                 {thisProduct.desc}
                                             </div>
-                                            <div className='bg-gray-300 w-full h-[0.5px] my-1' />
-                                            <div className='flex divide-x-[0.3px] lg:my-10 divide-gray-600 dark:divide-gray-300 rounded-full dark:bg-gray-700 bg-gray-50 shadow-lg lg:py-4 lg:px-6 py-2 justify-evenly mt-5 items-center mx-[20%]'>
+                                            <div className='bg-gray-300 w-full h-[0.5px] mt-5 -mb-5' />
+                                            {/* <div className='flex divide-x-[0.3px] lg:my-10 divide-gray-600 dark:divide-gray-300 rounded-full dark:bg-gray-700 bg-gray-50 shadow-lg lg:py-4 lg:px-6 py-2 justify-evenly mt-5 items-center mx-[20%]'>
                                                 <div className='relative'>
                                                     <span className='absolute text-center font-bold dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text dark:blur-xl'>
                                                         <span className='lg:text-5xl text-center text-2xl font-bold px-3'>
@@ -180,7 +180,7 @@ const ProductList = () => {
                                                 <span className='lg:text-4xl text-center text-lg font-thin px-3'>
                                                     ฿{thisProduct.net_volume}
                                                 </span>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>
@@ -188,34 +188,37 @@ const ProductList = () => {
                                     <span className='text-left  lg:text-2xl text-lg my-1 font-medium'>
                                         {thisProduct.ingredients}
                                     </span>
-                                    <span className='lg:text-lg text-right text-md my-1 flex flex-col gap-3'>
-                                        <span className='flex py-3 justify-end'>
+                                    <span className='lg:text-lg text-right text-md my-1 flex flex-col'>
+                                        <span className='flex py-1 justify-end'>
                                             {thisProduct.howtouse}
                                         </span>
-                                        <span className='flex py-3 justify-end'>
+                                        <span className='flex py-1 justify-end'>
                                             {thisProduct.properties}
+                                        </span>
+                                        <span className='flex py-1 justify-end'>
+                                            {thisProduct.manufacturing_date}
+                                        </span>
+                                        <span className='flex py-1 justify-end items-center gap-2'>
+                                            <AiOutlineBarcode />
+                                            {thisProduct.verified}
                                         </span>
                                     </span>
                                 </div>
-                                <div className='bg-gray-300 w-full h-[0.1px] my-1' />
+                                <div className='bg-gray-300 w-full h-[0.1px] mb-5' />
                                 <div className='justify-between flex'>
-                                    <div className='gap-2 flex items-center font-semibold'>
-                                        <AiOutlineBarcode />
-                                        {thisProduct.verified}
-                                    </div>
-                                    <div className='gap-2 flex items-center font-semibold'>
-                                        {thisProduct.manufacturing_date}
-                                    </div>
+                                    <span className='lg:text-6xl text-center text-5xl font-bold px-3'>
+                                        ฿{thisProduct.price}
+                                    </span>
                                     <Link to='/order-with'>
-                                        <div className='relative inline-flex items-center justify-center px-5 py-2 overflow-hidden font-medium text-sky-600 transition duration-700 ease-out border-2  dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text border-sky-600 rounded-full shadow-md group'>
+                                        <div className='relative inline-flex items-center lg:text-2xl justify-center px-5 py-1 lg:py-3 lg:px-7 overflow-hidden font-medium text-sky-600 transition duration-700 ease-out border-2  dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text border-sky-600 rounded-full shadow-md group'>
                                             <span className='absolute inset-0 flex items-center justify-center w-full h-full dark:text-slate-900 dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-content dark:drop-shadow-sm text-white duration-700 -translate-x-full bg-sky-600 group-hover:translate-x-0 ease'>
                                                 <MdShoppingCartCheckout className='text-4xl text-center items-center' />
                                             </span>
                                             <span className='absolute flex font-bold items-center justify-center w-full h-full dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 transition-all duration-300 transform group-hover:translate-x-full ease'>
-                                                Checkout Now!
+                                                Order With
                                             </span>
                                             <span className='relative invisible font-bold'>
-                                                Checkout Now!
+                                                Order With
                                             </span>
                                         </div>
                                     </Link>
@@ -223,7 +226,7 @@ const ProductList = () => {
                             </div>
                         </div>
                         <Link to={"/products"}>
-                            <AiFillCloseCircle className='fixed justify-end w-14 lg:w-18 h-14 lg:h-18 items-end left-[48%] -bottom-10 cursor-pointer hover:text-red-500 text-red-500/80 dark:grayscale-0 dark:text-gray-400 dark:hover:text-red-500 grayscale hover:grayscale-0 hover:scale-150 duration-300' />
+                            <AiFillCloseCircle className='fixed justify-end w-14 lg:w-18 h-14 lg:h-18 items-end left-[48%] -bottom-10 cursor-pointer hover:text-red-500 text-red-500/80 dark:grayscale-0 dark:text-gray-700 dark:hover:text-red-500 grayscale hover:grayscale-0 hover:scale-150 duration-300' />
                         </Link>
                     </Dialog>
                 </Fragment>

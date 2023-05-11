@@ -40,7 +40,7 @@ const HeroSection = () => {
                         </p>
 
                         <Link
-                            to='/productlist'
+                            to='/products'
                             class='mt-10 relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-full'
                         >
                             <span class='absolute group w-full h-full group-hover:drop-shadow-md hover:shadow-xl bg-sky-500 dark:bg-gradient-to-br from-blue-500 via-sky-500 to-emerald-500 dark:group-hover:from-blue-500 dark:group-hover:via-sky-500 dark:group-hover:to-emerald-500 ' />
