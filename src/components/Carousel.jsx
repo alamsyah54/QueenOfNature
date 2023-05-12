@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs"
-import { RxDotFilled } from "react-icons/rx"
 import { Link } from "react-router-dom"
 import { Button } from "@material-tailwind/react"
 import { slides } from "../data/Data"
@@ -74,7 +73,7 @@ const Carousel = () => {
                                     </span>
                                     <div className='mb-2'>
                                         <p className='text-lg lg:text-xl font-bold text-navy-700 dark:text-gray-100 lg:py-2 pt-5'>
-                                            {slides[currentIndex].title}
+                                            {slides[currentIndex].name}
                                         </p>
                                         <p className='mt-2 text-xs lg:text-sm font-medium text-gray-600 md:mt-3 text-start dark:text-gray-300'>
                                             {slides[currentIndex].desc}
@@ -85,7 +84,9 @@ const Carousel = () => {
                                     <div className='lg:text-3xl text-2xl p-2 font-bold dark:text-gray-100'>
                                         ฿{slides[currentIndex].price}
                                     </div>
-                                    <Link to='/'>
+                                    <Link
+                                        to={`/products/${slides[currentIndex].id}`}
+                                    >
                                         <Button className='hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100 hover:text-gray-900 active:bg-gray-400 dark:text-gray-200 border-gray-400 text-gray-800 bg-gray-200 dark:bg-gray-700 font-medium lg:rounded-xl rounded-lg capitalize text-xs px-3 py-1 lg:px-4 lg:py-2 text-center m-1 border-2'>
                                             More Details
                                         </Button>

@@ -164,23 +164,6 @@ const ProductList = () => {
                                                 {thisProduct.desc}
                                             </div>
                                             <div className='bg-gray-300 w-full h-[0.5px] mt-5 -mb-5' />
-                                            {/* <div className='flex divide-x-[0.3px] lg:my-10 divide-gray-600 dark:divide-gray-300 rounded-full dark:bg-gray-700 bg-gray-50 shadow-lg lg:py-4 lg:px-6 py-2 justify-evenly mt-5 items-center mx-[20%]'>
-                                                <div className='relative'>
-                                                    <span className='absolute text-center font-bold dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text dark:blur-xl'>
-                                                        <span className='lg:text-5xl text-center text-2xl font-bold px-3'>
-                                                            ฿{thisProduct.price}
-                                                        </span>
-                                                    </span>
-                                                    <span className='relative text-center font-bold dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
-                                                        <span className='lg:text-5xl text-center text-2xl font-bold px-3'>
-                                                            ฿{thisProduct.price}
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                                <span className='lg:text-4xl text-center text-lg font-thin px-3'>
-                                                    ฿{thisProduct.net_volume}
-                                                </span>
-                                            </div> */}
                                         </div>
                                     </div>
                                 </div>
