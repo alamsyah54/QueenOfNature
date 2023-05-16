@@ -5,7 +5,9 @@ import DarkMode from "./components/DarkMode"
 export default function ErrorPage() {
     const error = useRouteError()
     console.error(error)
-
+    const Back = () => {
+        history.back()
+    }
     return (
         <div
             id='error-page'
@@ -24,16 +26,16 @@ export default function ErrorPage() {
             </div>
             <div className='flex justify-center'>
                 <Link
-                    to='/'
+                    onClick={Back}
                     class='absolute px-5 py-3 my-6 text-sm font-medium rounded-lg text-white bg-sky-500 dark:bg-gradient-to-br from-blue-500 via-sky-500 to-emerald-500 dark:group-hover:from-blue-500 dark:group-hover:via-sky-500 dark:group-hover:to-emerald-500 focus:outline-none focus:ring dark:blur-lg'
                 >
-                    Go Back Home
+                    Go Back
                 </Link>
                 <Link
-                    to='/'
+                    onClick={Back}
                     class='absolute px-5 py-3 my-6 text-sm font-medium rounded-lg text-white bg-sky-500 dark:bg-gradient-to-br from-blue-500 via-sky-500 to-emerald-500 dark:group-hover:from-blue-500 dark:group-hover:via-sky-500 dark:group-hover:to-emerald-500 focus:outline-none focus:ring'
                 >
-                    Go Back Home
+                    Go Back
                 </Link>
             </div>
             <DarkMode />

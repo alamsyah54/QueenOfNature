@@ -20,23 +20,29 @@ const Navbar = () => {
                 {/* NAVBAR BUTTON START */}
                 <ul className='flex py-6 backdrop-blur bg-white/50 dark:bg-black/50 justify-between rounded-b-[40px] drop-shadow-2xl border-white/20 border-b-2'>
                     <li className='px-10 py-5 flex justify-start items-center'>
-                        <ul className='invisible md:visible lg:visible flex items-center lg:gap-6 md:gap-4'>
-                            <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
+                        <ul className='invisible md:visible lg:visible flex items-center lg:gap-6 md:gap-4 cursor-pointer'>
+                            <Link
+                                to='/'
+                                className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr dark:from-blue-400 dark:to-emerald-400 dark:bg-clip-text'
+                            >
                                 <SlHome className='dark:text-sky-600' />
-                                <Link to='/'>Home</Link>
-                            </li>
-                            <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
-                                <BiCategoryAlt className='dark:text-sky-600' />
-                                <Link to='/categories'>Category</Link>
-                            </li>
-                            <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
+                                <span>Home</span>
+                            </Link>
+
+                            <Link
+                                to='/products'
+                                className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr dark:from-blue-400 dark:to-emerald-400 dark:bg-clip-text'
+                            >
                                 <BsBoxSeam className='dark:text-sky-600' />
-                                <Link to='/products'>Product</Link>
-                            </li>
-                            <li className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
+                                <span>Products</span>
+                            </Link>
+                            <Link
+                                to='/contact'
+                                className='flex text-center gap-2 md:gap-1 md:text-lg lg:text-xl items-center text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 dark:text-transparent dark:bg-gradient-to-tr dark:from-blue-400 dark:to-emerald-400 dark:bg-clip-text'
+                            >
                                 <BsTelephone className='dark:text-sky-600' />
-                                <Link to='/contact'>Contact</Link>
-                            </li>
+                                <span>Contact</span>
+                            </Link>
                         </ul>
                     </li>
 
@@ -44,14 +50,14 @@ const Navbar = () => {
                     <li className='p-2 max-w-60 flex items-center cursor-pointer'>
                         <Link to='/' className='cursor-pointer'>
                             <img
-                                className='duration-300 w-24 dark:opacity-0 lg:w-32 md:w-28 lg:flex lg:justify-center lg:items-center fixed top-7 left-7 lg:top-6 md:top-6 lg:left-[48%] md:left-[48%]'
+                                className='duration-300 w-24 dark:opacity-0 lg:w-32 md:w-28 lg:flex lg:justify-center lg:items-center fixed top-7 left-7 lg:top-6 md:top-6 lg:left-[47%] md:left-[45%]'
                                 src={MainLogo}
                                 alt='Queen Of Nature'
                             ></img>
                         </Link>
                         <Link to='/' className='cursor-pointer'>
                             <img
-                                className='duration-300 opacity-0 dark:opacity-100  w-24 lg:w-32 md:w-28 lg:flex lg:justify-center lg:items-center fixed top-7 left-7 lg:top-6 md:top-6 lg:left-[48%] md:left-[48%]'
+                                className='duration-300 opacity-0 dark:opacity-100  w-24 lg:w-32 md:w-28 lg:flex lg:justify-center lg:items-center fixed top-7 left-7 lg:top-6 md:top-6 lg:left-[47%] md:left-[45%]'
                                 src={MainLogoLight}
                                 alt='Queen Of Nature'
                             ></img>
@@ -123,20 +129,14 @@ const Navbar = () => {
                     </div>
                     <nav>
                         <div className='bg-gray-100 dark:bg-slate-800 duration-1000 py-5 lg:pt-10 z-50'>
-                            <ul className='flex flex-row gap-10 text-gray-800 justify-evenly font-semibold'>
+                            <ul className='flex flex-row gap-10 pt-5 pb-10 text-gray-800 justify-evenly font-semibold'>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <SlHome className='dark:text-blue-400' />
                                     <Link to='/'>Home</Link>
                                 </li>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
-                                    <BiCategoryAlt className='dark:text-blue-400' />
-                                    <Link to='/categories'>Category</Link>
-                                </li>
-                            </ul>
-                            <ul className='flex flex-row gap-10 pt-5 pb-10 text-gray-800 justify-evenly font-semibold'>
-                                <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BsBoxSeam className='dark:text-blue-400' />
-                                    <Link to='/products'>Product</Link>
+                                    <Link to='/products'>Products</Link>
                                 </li>
                                 <li className='flex text-center gap-2 text-xl items-center dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 dark:hover:text-sky-300 hover:scale-105 hover:-mt-2 duration-300  hover:text-gray-800 drop-shadow-sm'>
                                     <BsTelephone className='dark:text-blue-400' />

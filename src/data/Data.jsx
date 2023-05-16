@@ -6,6 +6,15 @@ import Lotion from "../assets/images/lotion.jpg"
 import Oil from "../assets/images/oil.jpg"
 import Spray from "../assets/images/spray.jpg"
 import Soap from "../assets/images/soap.jpg"
+import QueenContactInstagram from "../assets/images/QueenContactInstagram.webp"
+import QueenContactLine from "../assets/images/QueenContactLine.webp"
+import QueenContactMessenger from "../assets/images/QueenContactMessenger.webp"
+import QueenContactFacebook from "../assets/images/QueenContactFacebook.webp"
+import QueenContactTikTok from "../assets/images/QueenContactTikTok.webp"
+import QueenTikTokShop from "../assets/images/QueenTikTokShop.webp"
+import QueenShopee from "../assets/images/QueenShopee.webp"
+import QueenMyshop from "../assets/images/QueenMyshop.webp"
+import Bestseller from "../components/bestseller"
 
 const products = [
     {
@@ -15,7 +24,7 @@ const products = [
         number: 1,
         name: "Kaffir Lime Shampoo",
         mainImage: BestSeller1,
-        category: "shampoo",
+        category: "Shampoo",
         images: [BestSeller1, Spray, Lotion],
         verified: "50-1-5600024",
         ingredients: (
@@ -35,6 +44,7 @@ const products = [
             "เลขที่ 41/1 หมู่ 2 ตำบลหนองหอย อำเภอเมืองเชียงใหม่ จังหวัดเชียงใหม่",
         manufacturing_date: "วันเดือนปี ที่ผลิต",
         net_volume: "ปริมาตรสุทธิ 200 มล",
+        bestseller: <Bestseller />,
     },
     {
         id: 222,
@@ -63,6 +73,7 @@ const products = [
             "เลขที่ 41/1 หมู่ 2 ตำบลหนองหอย อำเภอเมืองเชียงใหม่ จังหวัดเชียงใหม่",
         manufacturing_date: "วันเดือนปี ที่ผลิต",
         net_volume: "ปริมาตรสุทธิ 200 มล",
+        bestseller: "",
     },
     {
         id: 333,
@@ -91,18 +102,65 @@ const products = [
             "เลขที่ 41/1 หมู่ 2 ตำบลหนองหอย อำเภอเมืองเชียงใหม่ จังหวัดเชียงใหม่",
         manufacturing_date: "วันเดือนปี ที่ผลิต",
         net_volume: "ปริมาตรสุทธิ 200 มล",
+        bestseller: "",
     },
 ]
 
-const bestSellerProducts = []
+const markets = [
+    {
+        url: "https://tiktok.com/@queenofnature01",
+        name: "Shopee",
+        image: QueenShopee,
+    },
+    {
+        url: "https://tiktok.com/@queenofnature01",
+        name: "Tiktok Shop",
+        image: QueenTikTokShop,
+    },
+    {
+        url: "https://tiktok.com/@queenofnature01",
+        name: "My Shop",
+        image: QueenMyshop,
+    },
+    {
+        url: "https://tiktok.com/@queenofnature01",
+        name: "Line",
+        image: QueenContactLine,
+    },
+    {
+        url: "https://tiktok.com/@queenofnature01",
+        name: "Messenger",
+        image: QueenContactMessenger,
+    },
+]
 
-const users = []
-
-const contactInfo = {
-    phone: "555-555-5555",
-    email: "contact@example.com",
-    address: "123 Main St, Anytown USA",
-}
+const contacts = [
+    {
+        url: "https://facebook.com/queenofnature01",
+        name: "QUEEN Of Nature",
+        image: QueenContactFacebook,
+    },
+    {
+        url: "https://www.facebook.com/messages/t/112836901753781",
+        name: "QUEEN Of Nature",
+        image: QueenContactMessenger,
+    },
+    {
+        url: "https://instagram.com",
+        name: "@queenofnature01",
+        image: QueenContactInstagram,
+    },
+    {
+        url: "https://line.me",
+        name: "@queenofnature01_",
+        image: QueenContactLine,
+    },
+    {
+        url: "https://www.tiktok.com/@queennamfon",
+        name: "@queenofnature_01",
+        image: QueenContactTikTok,
+    },
+]
 
 const categories = [
     {
@@ -158,4 +216,4 @@ const slides = [
     },
 ]
 
-export { products, bestSellerProducts, users, contactInfo, categories, slides }
+export { products, markets, contacts, categories, slides }

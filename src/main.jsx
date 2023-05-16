@@ -6,7 +6,6 @@ import ErrorPage from "./error-page"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import ProductList from "./pages/ProductList"
 import ProductDetail from "../src/components/ProductDetail"
-import CategoryPage from "./pages/CategoryPage"
 import ContactList from "./pages/ContactList"
 import OrderPage from "./pages/OrderPage"
 
@@ -28,12 +27,6 @@ const router = createBrowserRouter([
         element: <ProductDetail />,
         errorElement: <ErrorPage />,
         title: "Product List",
-    },
-    {
-        path: "/categories",
-        element: <CategoryPage />,
-        errorElement: <ErrorPage />,
-        title: "Category Product",
     },
     {
         path: "/contact",

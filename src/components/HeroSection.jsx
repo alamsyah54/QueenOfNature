@@ -49,7 +49,6 @@ const HeroSection = () => {
                                 View Product
                             </span>
                         </Link>
-
                         {/* MAIN TEXT END */}
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar"
 import BackgroundGradient from "../components/BackgroundGradient"
 import DarkMode from "../components/DarkMode"
 import Footer from "../components/Footer"
-import React, { Fragment, useState } from "react"
+import React, { Fragment, useState, useEffect } from "react"
 import { AiFillCloseCircle, AiOutlineBarcode } from "react-icons/ai"
 import { BiCategoryAlt } from "react-icons/bi"
 import { useParams } from "react-router-dom"
@@ -35,55 +35,137 @@ const ProductList = () => {
         setCurrentIndex(slideIndex)
     }
     const currentImages = Object.values(thisProduct.images)[currentIndex]
+    const Back = () => {
+        history.back()
+    }
+    const [category, setCategory] = useState(
+        localStorage.getItem("selectedCategory") || "all"
+    )
+
+    const productsToShow =
+        category === "all"
+            ? products
+            : products.filter((product) => product.category === category)
+
+    useEffect(() => {
+        localStorage.setItem("selectedCategory", category)
+    }, [category])
+
+    const handleCategoryChange = (newCategory) => {
+        setCategory(newCategory)
+    }
     return (
         <div className='p-0 overflow-hidden bg-slate-200 dark:bg-gray-900'>
             <BackgroundGradient />
             <Navbar />
             <section className='px-5 py-32 '>
                 <div className='flex my-10 justify-center'>
-                    <div className='relative'>
-                        <span className='absolute text-5xl text-center text-sky-600 font-bold dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text dark:blur-xl'>
-                            PRODUCT
-                        </span>
-                        <span className='relative text-5xl text-center text-sky-600 font-bold dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
-                            PRODUCT
-                        </span>
+                    <div className='relative group'>
+                        <div className='absolute inset-0 dark:bg-gradient-to-tr from-blue-400 to-emerald-400 dark:blur-md rounded-xl opacity-60 group-hover:opacity-100 transition duration-200'></div>
+                        <div className='lg:px-2 lg:py-3 py-2 grid grid-cols-3 lg:flex rounded-xl dark:bg-gradient-to-tr dark:from-gray-700 dark:via-gray-700 dark:to-gray-900 from-gray-100 via-gray-100 to-gray-300 border-2 dark:border-gray-600 border-white bg-clip-border drop-shadow-xl shadow-lg justify-center lg:divide-x lg:divide-gray-300 dark:divide-gray-500 bg-gradient-to-tr'>
+                            <div className='flex p-2 lg:px-5 cursor-pointer justify-center'>
+                                <button
+                                    onClick={() => handleCategoryChange("all")}
+                                    className={
+                                        "cursor-pointer lg:p-0 hover:text-sky-800 rounded-md relative text-2xl lg:text-3xl text-center text-sky-600 font-bold dark:text-transparent dark:bg-gradient-to-tr dark:from-blue-400 dark:to-emerald-400 dark:hover:from-blue-300 dark:hover:to-emerald-300 transition duration-300 dark:bg-clip-text" +
+                                        (category == "all"
+                                            ? " lg:border-0 border-b border-sky-600 dark:border-sky-500 pb-1 lg:text-sky-300 lg:drop-shadow-sm dark:from-blue-200 dark:to-emerald-200"
+                                            : " lg:border-0 border-0 pb-1 hover:scale-105")
+                                    }
+                                >
+                                    All
+                                </button>
+                            </div>
+                            <div className='flex p-2 lg:px-5 cursor-pointer justify-center'>
+                                <button
+                                    onClick={() =>
+                                        handleCategoryChange("Shampoo")
+                                    }
+                                    className={
+                                        "cursor-pointer lg:p-0 hover:text-sky-800 rounded-md relative text-2xl lg:text-3xl text-center text-sky-600 font-bold dark:text-transparent dark:bg-gradient-to-tr dark:from-blue-400 dark:to-emerald-400 dark:hover:from-blue-300 dark:hover:to-emerald-300 transition duration-300 dark:bg-clip-text" +
+                                        (category == "Shampoo"
+                                            ? " lg:border-0 border-b border-sky-600 dark:border-sky-500 pb-1 lg:text-sky-300 lg:drop-shadow-sm dark:from-blue-200 dark:to-emerald-200"
+                                            : " lg:border-0 border-0 pb-1 hover:scale-105")
+                                    }
+                                >
+                                    Shampoo
+                                </button>
+                            </div>
+                            <div className='flex p-2 lg:px-5 cursor-pointer justify-center'>
+                                <button
+                                    onClick={() =>
+                                        handleCategoryChange("Lotion")
+                                    }
+                                    className={
+                                        "cursor-pointer lg:p-0 hover:text-sky-800 rounded-md relative text-2xl lg:text-3xl text-center text-sky-600 font-bold dark:text-transparent dark:bg-gradient-to-tr dark:from-blue-400 dark:to-emerald-400 dark:hover:from-blue-300 dark:hover:to-emerald-300 transition duration-300 dark:bg-clip-text" +
+                                        (category == "Lotion"
+                                            ? " lg:border-0 border-b border-sky-600 dark:border-sky-500 pb-1 lg:text-sky-300 lg:drop-shadow-sm dark:from-blue-200 dark:to-emerald-200"
+                                            : " lg:border-0 border-0 pb-1 hover:scale-105")
+                                    }
+                                >
+                                    Lotion
+                                </button>
+                            </div>
+                            <div className='flex p-2 lg:px-5 cursor-pointer justify-center'>
+                                <button
+                                    onClick={() => handleCategoryChange("Oil")}
+                                    className={
+                                        "cursor-pointer lg:p-0 hover:text-sky-800 rounded-md relative text-2xl lg:text-3xl text-center text-sky-600 font-bold dark:text-transparent dark:bg-gradient-to-tr dark:from-blue-400 dark:to-emerald-400 dark:hover:from-blue-300 dark:hover:to-emerald-300 transition duration-300 dark:bg-clip-text" +
+                                        (category == "Oil"
+                                            ? " lg:border-0 border-b border-sky-600 dark:border-sky-500 pb-1 lg:text-sky-300 lg:drop-shadow-sm dark:from-blue-200 dark:to-emerald-200"
+                                            : " lg:border-0 border-0 pb-1 hover:scale-105")
+                                    }
+                                >
+                                    Oil
+                                </button>
+                            </div>
+                            <div className='flex p-2 lg:px-5 cursor-pointer justify-center'>
+                                <button
+                                    onClick={() =>
+                                        handleCategoryChange("Spray")
+                                    }
+                                    className={
+                                        "cursor-pointer lg:p-0 hover:text-sky-800 rounded-md relative text-2xl lg:text-3xl text-center text-sky-600 font-bold dark:text-transparent dark:bg-gradient-to-tr dark:from-blue-400 dark:to-emerald-400 dark:hover:from-blue-300 dark:hover:to-emerald-300 transition duration-300 dark:bg-clip-text" +
+                                        (category == "Spray"
+                                            ? " lg:border-0 border-b border-sky-600 dark:border-sky-500 pb-1 lg:text-sky-300 lg:drop-shadow-sm dark:from-blue-200 dark:to-emerald-200"
+                                            : " lg:border-0 border-0 pb-1 hover:scale-105")
+                                    }
+                                >
+                                    Spray
+                                </button>
+                            </div>
+                            <div className='flex p-2 lg:px-5 cursor-pointer justify-center'>
+                                <button
+                                    onClick={() => handleCategoryChange("Soap")}
+                                    className={
+                                        "cursor-pointer lg:p-0 hover:text-sky-800 rounded-md relative text-2xl lg:text-3xl text-center text-sky-600 font-bold dark:text-transparent dark:bg-gradient-to-tr dark:from-blue-400 dark:to-emerald-400 dark:hover:from-blue-300 dark:hover:to-emerald-300 transition duration-300 dark:bg-clip-text" +
+                                        (category == "Soap"
+                                            ? " lg:border-0 border-b border-sky-600 dark:border-sky-500 pb-1 lg:text-sky-300 lg:drop-shadow-sm dark:from-blue-200 dark:to-emerald-200"
+                                            : " lg:border-0 border-0 pb-1 hover:scale-105")
+                                    }
+                                >
+                                    Soap
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className='px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7'>
-                    {products.map((product) => (
+                <div className='px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+                    {productsToShow.map((product) => (
                         <div
                             key={product.id}
-                            className='relative rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-lg w-full p-4 '
+                            className='relative rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-lg  w-full p-4'
                         >
                             <div className='h-full w-full'>
-                                <div className='relative w-full'>
+                                <div className='flex w-full group'>
                                     <img
                                         src={product.mainImage}
                                         className='mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full drop-shadow-md'
                                         alt=''
                                     />
                                 </div>
-                                <div className='flex justify-between px-1 md:items-start'>
-                                    <span className='absolute drop-shadow-md bg-pink-500 px-1 right-4 rounded-md font-medium text-white'>
-                                        <span className='flex items-center text-sm'>
-                                            <svg
-                                                xmlns='http:www.w3.org/2000/svg'
-                                                fill='white'
-                                                viewBox='0 0 24 24'
-                                                stroke-width='1.5'
-                                                stroke='currentColor'
-                                                className='w-3 h-3 lg:w-4 lg:h-4 mr-1'
-                                            >
-                                                <path
-                                                    stroke-linecap='round'
-                                                    stroke-linejoin='round'
-                                                    d='M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z'
-                                                />
-                                            </svg>
-                                            Best Seller
-                                        </span>
-                                    </span>
+                                <div className='flex justify-between px-1 self-end w-full'>
+                                    {product.bestseller}
                                     <div className='mb-2'>
                                         <p className='text-2xl font-bold text-navy-700 dark:text-gray-100 lg:py-2 pt-5'>
                                             {product.name}
@@ -145,14 +227,9 @@ const ProductList = () => {
                             <div className='text-gray-900 dark:text-gray-200 justify-between flex flex-col w-full h-full gap-1'>
                                 <div>
                                     <div className='lg:text-4xl text-2xl font-semibold justify-between flex'>
-                                        <div className='relative'>
-                                            <span className='absolute text-center font-bold dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text dark:blur-xl'>
-                                                {thisProduct.name}
-                                            </span>
-                                            <span className='relative text-center font-bold dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
-                                                {thisProduct.name}
-                                            </span>
-                                        </div>
+                                        <span className='relative text-center font-bold dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
+                                            {thisProduct.name}
+                                        </span>
                                         <div className='lg:text-2xl text-lg italic inline-flex items-center gap-1 my-2'>
                                             <BiCategoryAlt />
                                             {thisProduct.category}
@@ -208,8 +285,8 @@ const ProductList = () => {
                                 </div>
                             </div>
                         </div>
-                        <Link to={"/products"}>
-                            <AiFillCloseCircle className='fixed justify-end w-14 lg:w-18 h-14 lg:h-18 items-end left-[48%] -bottom-10 cursor-pointer hover:text-red-500 text-red-500/80 dark:grayscale-0 dark:text-gray-700 dark:hover:text-red-500 grayscale hover:grayscale-0 hover:scale-150 duration-300' />
+                        <Link onClick={Back}>
+                            <AiFillCloseCircle className='fixed justify-end w-14 lg:w-18 h-14 lg:h-18 items-end left-[48%] -bottom-10 cursor-pointer text-red-500 dark:hover:text-red-500 active:text-red-700 hover:scale-150 duration-300' />
                         </Link>
                     </Dialog>
                 </Fragment>

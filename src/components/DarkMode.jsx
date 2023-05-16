@@ -20,7 +20,7 @@ const DarkMode = () => {
     }
 
     return (
-        <div className='fixed z-[100000] bottom-[47%] left-5 drop-shadow-md'>
+        <div className='fixed z-[999999] bottom-[47%] left-5 drop-shadow-md'>
             <button
                 onClick={handleThemeSwitch}
                 className='relative p-1 inline-flex items-center justify-center font-semibold overflow-hidden group rounded-full'
