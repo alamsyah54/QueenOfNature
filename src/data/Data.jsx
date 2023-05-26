@@ -189,7 +189,7 @@ const categories = [
         url: "/category",
     },
 ]
-const slides = [
+const carousel = [
     {
         id: 111,
         price: 79,
@@ -216,4 +216,4 @@ const slides = [
     },
 ]
 
-export { products, markets, contacts, categories, slides }
+export { products, markets, contacts, categories, carousel }

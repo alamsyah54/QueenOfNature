@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { AiFillCloseCircle } from "react-icons/ai"
-import { BiMenuAltRight, BiCategoryAlt } from "react-icons/bi"
+import { BiMenuAltRight } from "react-icons/bi"
 import { MdShoppingCartCheckout } from "react-icons/md"
 import { BsBoxSeam, BsTelephone } from "react-icons/bs"
 import { SlHome } from "react-icons/sl"

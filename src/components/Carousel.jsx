@@ -2,18 +2,18 @@ import React, { useState } from "react"
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import { Button } from "@material-tailwind/react"
-import { slides } from "../data/Data"
+import { carousel } from "../data/Data"
 const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const prevSlide = () => {
         const isFirstSlide = currentIndex === 0
-        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
+        const newIndex = isFirstSlide ? carousel.length - 1 : currentIndex - 1
         setCurrentIndex(newIndex)
     }
 
     const nextSlide = () => {
-        const isLastSlide = currentIndex === slides.length - 1
+        const isLastSlide = currentIndex === carousel.length - 1
         const newIndex = isLastSlide ? 0 : currentIndex + 1
         setCurrentIndex(newIndex)
     }
@@ -34,7 +34,7 @@ const Carousel = () => {
             <div className='max-w-full m-auto py-5 lg:px-[10%] md:px-[20%] px-[10%] relative group'>
                 <div
                     style={{
-                        backgroundImage: `url(${slides[currentIndex].image})`,
+                        backgroundImage: `url(${carousel[currentIndex].image})`,
                     }}
                     className='flex justify-center items-center w-full h-full rounded-3xl bg-center bg-cover duration-500 drop-shadow-sm group-hover:drop-shadow-lg'
                 >
@@ -46,7 +46,7 @@ const Carousel = () => {
                                         © Queen Of Nature
                                     </span>
                                     <img
-                                        src={slides[currentIndex].image}
+                                        src={carousel[currentIndex].image}
                                         className='mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full drop-shadow-md'
                                         alt=''
                                     />
@@ -73,19 +73,19 @@ const Carousel = () => {
                                     </span>
                                     <div className='mb-2'>
                                         <p className='text-lg lg:text-xl font-bold text-navy-700 dark:text-gray-100 lg:py-2 pt-5'>
-                                            {slides[currentIndex].name}
+                                            {carousel[currentIndex].name}
                                         </p>
                                         <p className='mt-2 text-xs lg:text-sm font-medium text-gray-600 md:mt-3 text-start dark:text-gray-300'>
-                                            {slides[currentIndex].desc}
+                                            {carousel[currentIndex].desc}
                                         </p>
                                     </div>
                                 </div>
                                 <div className='flex items-end justify-between '>
                                     <div className='lg:text-3xl text-2xl p-2 font-bold dark:text-gray-100'>
-                                        ฿{slides[currentIndex].price}
+                                        ฿{carousel[currentIndex].price}
                                     </div>
                                     <Link
-                                        to={`/products/${slides[currentIndex].id}`}
+                                        to={`/products/${carousel[currentIndex].id}`}
                                     >
                                         <Button className='hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100 hover:text-gray-900 active:bg-gray-400 dark:text-gray-200 border-gray-400 text-gray-800 bg-gray-200 dark:bg-gray-700 font-medium lg:rounded-xl rounded-lg capitalize text-xs px-3 py-1 lg:px-4 lg:py-2 text-center m-1 border-2'>
                                             More Details
