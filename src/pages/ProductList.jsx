@@ -25,9 +25,8 @@ const ProductList = () => {
     }
     return (
         <div className='p-0 overflow-hidden bg-slate-200 dark:bg-gray-900'>
-            <BackgroundGradient />
             <Navbar />
-            <section className='px-5 py-32'>
+            <section className='px-5 py-32 min-h-screen'>
                 <div className='flex my-10 justify-center'>
                     <div className='relative group'>
                         <div className='absolute inset-0 dark:bg-gradient-to-tr from-blue-400 to-emerald-400 dark:blur-md rounded-xl opacity-60 group-hover:opacity-100 transition duration-200'></div>
@@ -158,8 +157,11 @@ const ProductList = () => {
                         </div>
                     ))}
                 </div>
+                <BackgroundGradient />
             </section>
+            <BackgroundGradient />
             <DarkMode />
+            <BackgroundGradient />
             <Footer />
         </div>
     )

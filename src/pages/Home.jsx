@@ -10,12 +10,14 @@ import Faq from "../components/Faq"
 const Home = () => {
     return (
         <div className='p-0 overflow-hidden bg-slate-200 dark:bg-gray-900'>
-            <BackgroundGradient />
             <Navbar />
+            <BackgroundGradient />
             <HeroSection />
+            <BackgroundGradient />
             <Carousel />
             <CategorySection />
             <DarkMode />
+            <BackgroundGradient />
             <Faq />
             <Footer />
         </div>

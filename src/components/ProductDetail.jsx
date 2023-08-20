@@ -3,12 +3,12 @@ import BackgroundGradient from "../components/BackgroundGradient"
 import DarkMode from "../components/DarkMode"
 import Footer from "../components/Footer"
 import React, { Fragment, useState, useEffect } from "react"
-import { AiFillCloseCircle, AiOutlineBarcode } from "react-icons/ai"
+import { AiOutlineCloseCircle } from "react-icons/ai"
 import { BiCategoryAlt } from "react-icons/bi"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { Button, Dialog } from "@material-tailwind/react"
-import { products, slides } from "../data/Data"
+import { products, carousel } from "../data/Data"
 import { MdShoppingCartCheckout } from "react-icons/md"
 
 const ProductList = () => {
@@ -21,12 +21,12 @@ const ProductList = () => {
 
     const prevSlide = () => {
         const isFirstSlide = currentIndex === 0
-        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
+        const newIndex = isFirstSlide ? carousel.length - 1 : currentIndex - 1
         setCurrentIndex(newIndex)
     }
 
     const nextSlide = () => {
-        const isLastSlide = currentIndex === slides.length - 1
+        const isLastSlide = currentIndex === carousel.length - 1
         const newIndex = isLastSlide ? 0 : currentIndex + 1
         setCurrentIndex(newIndex)
     }
@@ -58,7 +58,7 @@ const ProductList = () => {
         <div className='p-0 overflow-hidden bg-slate-200 dark:bg-gray-900'>
             <BackgroundGradient />
             <Navbar />
-            <section className='px-5 py-32 '>
+            <section className='px-5 lg:py-32'>
                 <div className='flex my-10 justify-center'>
                     <div className='relative group'>
                         <div className='absolute inset-0 dark:bg-gradient-to-tr from-blue-400 to-emerald-400 dark:blur-md rounded-xl opacity-60 group-hover:opacity-100 transition duration-200'></div>
@@ -196,11 +196,11 @@ const ProductList = () => {
                             mount: { scale: 0.8, y: 0 },
                             unmount: { scale: 0.9, y: -100 },
                         }}
-                        className='flex flex-col lg:flex-row rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-xl p-5 gap-4 lg:p-8 duration-500'
+                        className='flex flex-col lg:flex-row rounded-3xl dark:bg-gray-800 bg-gray-100 bg-clip-border drop-shadow-xl p-5 gap-4 lg:p-8 duration-500 overflow-y-auto'
                     >
-                        <div className='flex items-center flex-col w-[100%] h-[50%] lg:h-[100%] lg:w-[50%]'>
+                        <div className='flex items-center flex-col w-[100%] h-[50%] lg:h-[100%] lg:w-[70%]'>
                             <div
-                                className='w-full h-full flex justify-between items-center rounded-3xl bg-center bg-cover overflow-clip shadow-xl'
+                                className='w-full h-full flex justify-between items-center rounded-xl bg-center bg-cover overflow-clip shadow-xl'
                                 style={{
                                     backgroundImage: `url(${currentImages})`,
                                 }}
@@ -226,7 +226,7 @@ const ProductList = () => {
                         <div className='flex flex-row w-[100%] h-[50%] lg:h-[100%] lg:w-[50%] lg:p-24 items-center justify-center'>
                             <div className='text-gray-900 dark:text-gray-200 justify-between flex flex-col w-full h-full gap-1'>
                                 <div>
-                                    <div className='lg:text-4xl text-2xl font-semibold justify-between flex'>
+                                    <div className='lg:text-4xl flex text-2xl font-semibold justify-between'>
                                         <span className='relative text-center font-bold dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text'>
                                             {thisProduct.name}
                                         </span>
@@ -237,35 +237,55 @@ const ProductList = () => {
                                     </div>
                                     <div className='h-[60%]'>
                                         <div className='lg:text-4xl text-2xl font-semibold'>
-                                            <div className='lg:text-2xl text-lg font-thin lg:my-16'>
+                                            <div className='lg:text-2xl text-lg font-thin lg:my-5'>
                                                 {thisProduct.desc}
                                             </div>
-                                            <div className='bg-gray-300 w-full h-[0.5px] mt-5 -mb-5' />
                                         </div>
                                     </div>
                                 </div>
-                                <div className='lg:text-lg text-lg lg:justify-evenly justify-between flex items-center '>
-                                    <span className='text-left  lg:text-2xl text-lg my-1 font-medium'>
-                                        {thisProduct.ingredients}
-                                    </span>
-                                    <span className='lg:text-lg text-right text-md my-1 flex flex-col'>
-                                        <span className='flex py-1 justify-end'>
-                                            {thisProduct.howtouse}
-                                        </span>
-                                        <span className='flex py-1 justify-end'>
-                                            {thisProduct.properties}
-                                        </span>
-                                        <span className='flex py-1 justify-end'>
-                                            {thisProduct.manufacturing_date}
-                                        </span>
-                                        <span className='flex py-1 justify-end items-center gap-2'>
-                                            <AiOutlineBarcode />
-                                            {thisProduct.verified}
-                                        </span>
+                                <div className='lg:text-xl text-lg lg:gap-5 justify-center flex items-center'>
+                                    <span className='text-left flex'>
+                                        <table className='table-full'>
+                                            <tbody>
+                                                <tr className='border-y dark:border-gray-300 border-gray-500 align-top'>
+                                                    <td className='pr-5 py-3 font-bold'>
+                                                        Verification Number
+                                                    </td>
+                                                    <td className='py-3'>
+                                                        {thisProduct.verified}
+                                                    </td>
+                                                </tr>
+                                                <tr className='border-b dark:border-gray-300 border-gray-500 align-top'>
+                                                    <td className='pr-5 py-3 font-bold'>
+                                                        Ingredients
+                                                    </td>
+                                                    <td className='py-3'>
+                                                        {
+                                                            thisProduct.ingredients
+                                                        }
+                                                    </td>
+                                                </tr>
+                                                <tr className='border-b dark:border-gray-300 border-gray-500 align-top'>
+                                                    <td className='pr-5 py-3 font-bold'>
+                                                        How to use
+                                                    </td>
+                                                    <td className='py-3'>
+                                                        {thisProduct.howtouse}
+                                                    </td>
+                                                </tr>
+                                                <tr className='border-b dark:border-gray-300 border-gray-500 align-top'>
+                                                    <td className='pr-5 py-3 font-bold'>
+                                                        Properties
+                                                    </td>
+                                                    <td className='py-3'>
+                                                        {thisProduct.properties}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </span>
                                 </div>
-                                <div className='bg-gray-300 w-full h-[0.1px] mb-5' />
-                                <div className='justify-between flex'>
+                                <div className='justify-between flex my-3'>
                                     <span className='lg:text-6xl text-center text-5xl font-bold px-3'>
                                         ฿{thisProduct.price}
                                     </span>
@@ -286,7 +306,10 @@ const ProductList = () => {
                             </div>
                         </div>
                         <Link onClick={Back}>
-                            <AiFillCloseCircle className='fixed justify-end w-14 lg:w-18 h-14 lg:h-18 items-end left-[48%] -bottom-10 cursor-pointer text-red-500 dark:hover:text-red-500 active:text-red-700 hover:scale-150 duration-300' />
+                            <div className='fixed top-0 right-0 rounded-full font-sans cursor-pointer dark:text-red-500 text-red-500 dark:hover:text-red-500 text-3xl active:text-red-700 duration-300'>
+                                <AiOutlineCloseCircle className='w-14 lg:w-18 h-14 lg:h-18 drop-shadow' />
+                            </div>
+                            {/*  */}
                         </Link>
                     </Dialog>
                 </Fragment>

@@ -48,7 +48,7 @@ const Footer = () => {
                                 <ul class='text-gray-600 dark:text-gray-400'>
                                     <li class='mb-4'>
                                         <Link
-                                            to='/productlist'
+                                            to='/products'
                                             class='hover:underline'
                                         >
                                             Shampoo
@@ -56,7 +56,7 @@ const Footer = () => {
                                     </li>
                                     <li class='mb-4'>
                                         <Link
-                                            to='/productlist'
+                                            to='/products'
                                             class='hover:underline'
                                         >
                                             Oil Face Wash
@@ -64,7 +64,7 @@ const Footer = () => {
                                     </li>
                                     <li class='mb-4'>
                                         <Link
-                                            to='/productlist'
+                                            to='/products'
                                             class='hover:underline'
                                         >
                                             Lotion
@@ -72,7 +72,7 @@ const Footer = () => {
                                     </li>
                                     <li class='mb-4'>
                                         <Link
-                                            to='/productlist'
+                                            to='/products'
                                             class='hover:underline'
                                         >
                                             Solid & Liquid Soup
@@ -98,7 +98,7 @@ const Footer = () => {
                                     </li>
                                     <li class='mb-4'>
                                         <Link
-                                            to='/productlist'
+                                            to='/contact'
                                             class='hover:underline'
                                         >
                                             Contact Person
@@ -112,26 +112,17 @@ const Footer = () => {
                                 </h2>
                                 <ul class='text-gray-600 dark:text-gray-400'>
                                     <li class='mb-4'>
-                                        <Link
-                                            to='/productlist'
-                                            class='hover:underline'
-                                        >
+                                        <Link to='/' class='hover:underline'>
                                             Terms Of Service
                                         </Link>
                                     </li>
                                     <li class='mb-4'>
-                                        <Link
-                                            to='/productlist'
-                                            class='hover:underline'
-                                        >
+                                        <Link to='/' class='hover:underline'>
                                             Privacy Policy
                                         </Link>
                                     </li>
                                     <li class='mb-4'>
-                                        <Link
-                                            to='/productlist'
-                                            class='hover:underline'
-                                        >
+                                        <Link to='/' class='hover:underline'>
                                             Terms & Conditions
                                         </Link>
                                     </li>

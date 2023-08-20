@@ -56,6 +56,7 @@ const OrderPage = () => {
                     ))}
                 </div>
             </section>
+            <BackgroundGradient />
             <DarkMode />
             <Footer />
         </div>

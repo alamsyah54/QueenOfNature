@@ -47,7 +47,7 @@ const Faq = () => {
                     <Accordion
                         open={open === 1}
                         icon={<Icon id={1} open={open} />}
-                        className='rounded-xl shadow-lg dark:border-slate-700 border-gray-50 border-[0.3px]  drop-shadow-lg px-7 mb-3'
+                        className='rounded-xl shadow-lg dark:border-slate-700 border-gray-50 border-[0.3px] bg-white/30 dark:bg-transparent drop-shadow-lg px-7 mb-3'
                     >
                         <AccordionHeader
                             className='lg:text-2xl'
@@ -68,7 +68,7 @@ const Faq = () => {
                     <Accordion
                         open={open === 2}
                         icon={<Icon id={2} open={open} />}
-                        className='rounded-xl shadow-lg dark:border-slate-700 border-gray-50 border-[0.3px]  drop-shadow-lg px-7 mb-3'
+                        className='rounded-xl shadow-lg dark:border-slate-700 border-gray-50 border-[0.3px] bg-white/30 dark:bg-transparent drop-shadow-lg px-7 mb-3'
                     >
                         <AccordionHeader
                             className='lg:text-2xl'
@@ -86,7 +86,7 @@ const Faq = () => {
                     <Accordion
                         open={open === 3}
                         icon={<Icon id={3} open={open} />}
-                        className='rounded-xl shadow-lg dark:border-slate-700 border-gray-50 border-[0.3px]  drop-shadow-lg px-7'
+                        className='rounded-xl shadow-lg dark:border-slate-700 border-gray-50 border-[0.3px] bg-white/30 dark:bg-transparent drop-shadow-lg px-7'
                     >
                         <AccordionHeader
                             className='lg:text-2xl'

@@ -1,5 +1,5 @@
 import React from "react"
-import HeroImages from "../assets/images/HeroImages.png"
+import HeroImages from "../assets/images/MAINBG.webp"
 import { Link } from "react-router-dom"
 
 const HeroSection = () => {

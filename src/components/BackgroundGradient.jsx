@@ -2,7 +2,7 @@ import React from "react"
 
 const BackgroundGradient = () => {
     return (
-        <div className='fixed w-screen h-screen'>
+        <div className='relative w-screen'>
             <div className='relative top-[30%] left-[40%]'>
                 <div className='absolute -left-[500px] w-96 h-96 dark:bg-cyan-200 bg-cyan-400 dark:mix-blend-normal rounded-full mix-blend-multiply filter  blur-3xl opacity-40 dark:opacity-20  animate-blob animation-delay-2000'></div>
                 <div className='absolute -left-[800px] w-96 h-96 dark:bg-emerald-200 bg-emerald-400 dark:mix-blend-normal rounded-full mix-blend-multiply filter  blur-3xl opacity-40 dark:opacity-20  animate-blob animation-delay-4000'></div>

@@ -1,11 +1,14 @@
-import BestSeller1 from "../assets/images/bestseller1.png"
-import BestSeller2 from "../assets/images/bestseller2.png"
-import BestSeller4 from "../assets/images/bestseller4.png"
 import Shampoo from "../assets/images/shampoo.jpg"
 import Lotion from "../assets/images/lotion.jpg"
 import Oil from "../assets/images/oil.jpg"
 import Spray from "../assets/images/spray.jpg"
 import Soap from "../assets/images/soap.jpg"
+import KAFFIRLIME from "../assets/images/KAFFIRLIME.webp"
+import JASMINE from "../assets/images/JASMINE.webp"
+import EUCALYPTUS from "../assets/images/EUCALYPTUS.webp"
+import DOKMOKE from "../assets/images/DOKMOKE.webp"
+import POMEGRANADE from "../assets/images/POMEGRANADE.webp"
+import RICE from "../assets/images/RICE.webp"
 import QueenContactInstagram from "../assets/images/QueenContactInstagram.webp"
 import QueenContactLine from "../assets/images/QueenContactLine.webp"
 import QueenContactMessenger from "../assets/images/QueenContactMessenger.webp"
@@ -18,117 +21,124 @@ import Bestseller from "../components/bestseller"
 
 const products = [
     {
-        id: 111,
+        id: 1,
         price: 75,
         desc: "แชมพูมะกรูด บำรุงหนังศีรษะ ลดอาการคัน มีส่วนผสมของน้ำมันหอมระเหยกลิ่นมะกรูด ให้ความรู้สึกสดชื่น หายใจโล่งสบาย",
         number: 1,
         name: "Kaffir Lime Shampoo",
-        mainImage: BestSeller1,
+        mainImage: KAFFIRLIME,
         category: "Shampoo",
-        images: [BestSeller1, Spray, Lotion],
+        images: [KAFFIRLIME, Spray, Lotion],
         verified: "50-1-5600024",
-        ingredients: (
-            <span>
-                Emal 28ct
-                <br />
-                Emal
-                <br />
-                PEG-75 Lanolin
-                <br />
-                Citrus X Hystrix L
-            </span>
-        ),
-        howtouse: "HOW TO USE",
+        ingredients: "Emal 28ct, Emal, PEG-75 Lanolin, Citrus X Hystrix L",
+        howtouse: "ชโลมลงบนผมเปียกแล้วสระเป็นประจำทุกวัน",
         properties: "บำรุงหนังศีรษะ ลดอาการคัน",
-        manufacture:
-            "เลขที่ 41/1 หมู่ 2 ตำบลหนองหอย อำเภอเมืองเชียงใหม่ จังหวัดเชียงใหม่",
-        manufacturing_date: "วันเดือนปี ที่ผลิต",
-        net_volume: "ปริมาตรสุทธิ 200 มล",
         bestseller: <Bestseller />,
     },
     {
-        id: 222,
-        price: 70,
-        desc: "โลชั่นบำรุงผิวกลิ่นดอกมะลิ น้ำมันหอมระเหยให้กลิ่นมะลิหอมสดชื่น ทำให้ผ่อนคลาย ความเครียด ช่วยให้นอนหลับสบาย/ลดอาการนอนไม่กลับ",
+        id: 2,
+        price: 78,
+        desc: "โลชั่นบำรุงผิวกลิ่นดอกมะลิ น้ำมันหอมระเหยให้กลิ่นมะลิหอมสดชื่น ทำให้ผ่อนคลาย ความเครียด ช่วยให้นอนหลับสบาย/ลดอาการนอนไม่หลับ",
         number: 2,
         name: "Jasmine Lotion",
-        mainImage: BestSeller2,
+        mainImage: JASMINE,
         category: "Lotion",
-        images: [BestSeller2, Shampoo, Spray],
-        verified: "50-1-5600024",
-        ingredients: (
-            <span>
-                Emal 28ct
-                <br />
-                Emal
-                <br />
-                PEG-75 Lanolin
-                <br />
-                Citrus X Hystrix L
-            </span>
-        ),
-        howtouse: "HOW TO USE",
-        properties: "บำรุงหนังศีรษะ ลดอาการคัน",
-        manufacture:
-            "เลขที่ 41/1 หมู่ 2 ตำบลหนองหอย อำเภอเมืองเชียงใหม่ จังหวัดเชียงใหม่",
-        manufacturing_date: "วันเดือนปี ที่ผลิต",
-        net_volume: "ปริมาตรสุทธิ 200 มล",
+        images: [JASMINE, Lotion, Shampoo],
+        verified: "50-1-5602024",
+        ingredients:
+            "Beeswax, Cetyl Alcohol, Dianthus Caryophyllus Flower Oil, Glyceride, Glycerin, Isopropyl Maristate, Lecithin, Methylparaben Perfume, Propylparaben, Stearyl Alcohol, Water",
+        howtouse: "ลูบไล้โลชั่นทั่วผิวกายบ่อยครั้งเป็นประจำทุกวัน",
+        properties: "บำรุงรักษาผิวพรรณ เนียนนุ่มชุ่มชื้น กลิ่นกายหอม",
         bestseller: "",
     },
     {
-        id: 333,
-        price: 73,
+        id: 3,
+        price: 79,
         desc: "โลชั่นบำรุงผิวกลิ่นน้ำนมข้าว น้ำมันหอมระเหยให้กลิ่นน้ำนมข้าวละมุน อ่อนหวาน และอบอุ่น ทำให้ผ่อนคลาย ช่วยให้นอนหลับสบาย/ลดอาการนอนไม่หลับ",
         number: 3,
         name: "Nourishing Rice Lotion",
-        mainImage: BestSeller4,
+        mainImage: RICE,
         category: "Lotion",
-        images: [BestSeller4, Shampoo, Oil],
-        verified: "50-1-5600024",
-        ingredients: (
-            <span>
-                Emal 28ct
-                <br />
-                Emal
-                <br />
-                PEG-75 Lanolin
-                <br />
-                Citrus X Hystrix L
-            </span>
-        ),
-        howtouse: "HOW TO USE",
-        properties: "บำรุงหนังศีรษะ ลดอาการคัน",
-        manufacture:
-            "เลขที่ 41/1 หมู่ 2 ตำบลหนองหอย อำเภอเมืองเชียงใหม่ จังหวัดเชียงใหม่",
-        manufacturing_date: "วันเดือนปี ที่ผลิต",
-        net_volume: "ปริมาตรสุทธิ 200 มล",
+        images: [RICE, Spray, Shampoo],
+        verified: "50-1-5602024",
+        ingredients:
+            "Beeswax, Cetyl Alcohol, Dianthus Caryophyllus Flower Oil, Glyceride, Glycerin, Isopropyl Maristate, Lecithin, Methylparaben Perfume, Propylparaben, Stearyl Alcohol, Water",
+        howtouse: "ลูบไล้โลชั่นทั่วผิวกายบ่อยครั้งเป็นประจำทุกวัน",
+        properties: "บำรุงรักษาผิวพรรณ เนียนนุ่มชุ่มชื้น กลิ่นกายหอม",
+        bestseller: <Bestseller />,
+    },
+    {
+        id: 4,
+        price: 72,
+        desc: "โลชั่นบำรุงผิวกลิ่นดอกโมก น้ำมันหอมระเหยให้กลิ่นดอกโมก ราชินีดอกไม้ไทย ช่วยให้ผ่อนคลาย กลิ่นหอมนุ่มนวล สุขุม และอบอุ่น",
+        number: 4,
+        name: "Dok Moke Lotion",
+        mainImage: DOKMOKE,
+        category: "Lotion",
+        images: [DOKMOKE, Lotion, Spray],
+        verified: "50-1-5602024",
+        ingredients:
+            "Beeswax, Cetyl Alcohol, Dianthus Caryophyllus Flower Oil, Glyceride, Glycerin, Isopropyl Maristate, Lecithin, Methylparaben Perfume, Propylparaben, Stearyl Alcohol, Water",
+        howtouse: "ลูบไล้โลชั่นทั่วผิวกายบ่อยครั้งเป็นประจำทุกวัน",
+        properties: "บำรุงรักษาผิวพรรณ เนียนนุ่มชุ่มชื้น กลิ่นกายหอม",
+        bestseller: "",
+    },
+    {
+        id: 5,
+        price: 77,
+        desc: "โลชั่นบำรุงผิวกลิ่นทับทิม น้ำมันหอมระเหยให้กลิ่นทับทิม",
+        number: 5,
+        name: "Pomegranade Lotion",
+        mainImage: POMEGRANADE,
+        category: "Lotion",
+        images: [POMEGRANADE, Spray, Shampoo],
+        verified: "50-1-5602024",
+        ingredients:
+            "Beeswax, Cetyl Alcohol, Dianthus Caryophyllus Flower Oil, Glyceride, Glycerin, Isopropyl Maristate, Lecithin, Methylparaben Perfume, Propylparaben, Stearyl Alcohol, Water",
+        howtouse: "ลูบไล้โลชั่นทั่วผิวกายบ่อยครั้งเป็นประจำทุกวัน",
+        properties: "บำรุงรักษาผิวพรรณ เนียนนุ่มชุ่มชื้น กลิ่นกายหอม",
+        bestseller: "",
+    },
+    {
+        id: 6,
+        price: 76,
+        desc: "สเปรยปรับอากาศกลิ่นยูคาลิปตัส มีส่วนผสมของน้ำมันยูคาลิปตัส ให้ความรู้สึกเย็นสดชื่น ผ่อนคลาย ลดอาการคัดจมูก",
+        number: 6,
+        name: "Eucalyptus Air Spray",
+        mainImage: EUCALYPTUS,
+        category: "Spray",
+        images: [EUCALYPTUS, Lotion, Shampoo],
+        verified: "50-1-5602024",
+        ingredients: "no",
+        howtouse: "no",
+        properties: "no",
         bestseller: "",
     },
 ]
 
 const markets = [
     {
-        url: "https://tiktok.com/@queenofnature01",
+        url: "#",
         name: "Shopee",
         image: QueenShopee,
     },
     {
-        url: "https://tiktok.com/@queenofnature01",
+        url: "#",
         name: "Tiktok Shop",
         image: QueenTikTokShop,
     },
     {
-        url: "https://tiktok.com/@queenofnature01",
+        url: "#",
         name: "My Shop",
         image: QueenMyshop,
     },
     {
-        url: "https://tiktok.com/@queenofnature01",
+        url: "#",
         name: "Line",
         image: QueenContactLine,
     },
     {
-        url: "https://tiktok.com/@queenofnature01",
+        url: "https://www.facebook.com/messages/t/112836901753781",
         name: "Messenger",
         image: QueenContactMessenger,
     },
@@ -146,12 +156,12 @@ const contacts = [
         image: QueenContactMessenger,
     },
     {
-        url: "https://instagram.com",
+        url: "#",
         name: "@queenofnature01",
         image: QueenContactInstagram,
     },
     {
-        url: "https://line.me",
+        url: "#",
         name: "@queenofnature01_",
         image: QueenContactLine,
     },
@@ -196,7 +206,7 @@ const carousel = [
         desc: "แชมพูมะกรูด บำรุงหนังศีรษะ ลดอาการคัน มีส่วนผสมของน้ำมันหอมระเหยกลิ่นมะกรูด ให้ความรู้สึกสดชื่น หายใจโล่งสบาย",
         number: 1,
         name: "Kaffir Lime Shampoo",
-        image: BestSeller1,
+        image: KAFFIRLIME,
     },
     {
         id: 222,
@@ -204,7 +214,7 @@ const carousel = [
         desc: "โลชั่นบำรุงผิวกลิ่นดอกมะลิ น้ำมันหอมระเหยให้กลิ่นมะลิหอมสดชื่น ทำให้ผ่อนคลาย ความเครียด ช่วยให้นอนหลับสบาย",
         number: 2,
         name: "Jasmine Lotion",
-        image: BestSeller2,
+        image: JASMINE,
     },
     {
         id: 333,
@@ -212,7 +222,31 @@ const carousel = [
         desc: "โลชั่นบำรุงผิวกลิ่นน้ำนมข้าว น้ำมันหอมระเหยให้กลิ่นน้ำนมข้าวละมุน อ่อนหวาน และอบอุ่น ทำให้ผ่อนคลาย ช่วยให้นอนหลับสบาย",
         number: 3,
         name: "Nourishing Rice Lotion",
-        image: BestSeller4,
+        image: RICE,
+    },
+    {
+        id: 444,
+        price: 71,
+        desc: "โลชั่นบำรุงผิวกลิ่นดอกโมก น้ำมันหอมระเหยให้กลิ่นดอกโมก ราชินีดอกไม้ไทย ช่วยให้ผ่อนคลาย กลิ่นหอมนุ่มนวล สุขุม และอบอุ่น",
+        number: 2,
+        name: "Dok Moke Lotion",
+        image: DOKMOKE,
+    },
+    {
+        id: 555,
+        price: 76,
+        desc: "โลชั่นบำรุงผิวกลิ่นทับทิม น้ำมันหอมระเหยให้กลิ่นทับทิม",
+        number: 3,
+        name: "Pomegranade Lotion",
+        image: POMEGRANADE,
+    },
+    {
+        id: 666,
+        price: 73,
+        desc: "โลชั่นบำรุงผิวกลิ่นน้ำนมข้าว น้ำมันหอมระเหยให้กลิ่นน้ำนมข้าวละมุน อ่อนหวาน และอบอุ่น ทำให้ผ่อนคลาย ช่วยให้นอนหลับสบาย",
+        number: 3,
+        name: "Eucalyptus Spray",
+        image: EUCALYPTUS,
     },
 ]
 
