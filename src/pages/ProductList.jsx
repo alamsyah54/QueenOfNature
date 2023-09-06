@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Navbar from "../components/Navbar"
+import Nav from "../components/Nav"
 import BackgroundGradient from "../components/BackgroundGradient"
 import DarkMode from "../components/DarkMode"
 import Footer from "../components/Footer"
@@ -25,7 +25,7 @@ const ProductList = () => {
     }
     return (
         <div className='p-0 overflow-hidden bg-slate-200 dark:bg-gray-900'>
-            <Navbar />
+            <Nav />
             <section className='px-5 py-32 min-h-screen'>
                 <div className='flex my-10 justify-center'>
                     <div className='relative group'>
@@ -159,8 +159,6 @@ const ProductList = () => {
                 </div>
                 <BackgroundGradient />
             </section>
-            <BackgroundGradient />
-            <DarkMode />
             <BackgroundGradient />
             <Footer />
         </div>

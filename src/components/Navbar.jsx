@@ -4,8 +4,7 @@ import { BiMenuAltRight } from "react-icons/bi"
 import { MdShoppingCartCheckout } from "react-icons/md"
 import { BsBoxSeam, BsTelephone } from "react-icons/bs"
 import { SlHome } from "react-icons/sl"
-import MainLogo from "../assets/images/Queen.webp"
-import MainLogoLight from "../assets/images/QueenWhite.webp"
+import MainLogo from "/assets/images/Queen.webp"
 import { Link } from "react-router-dom"
 import CheckoutButton from "./CheckoutButton"
 
@@ -50,15 +49,8 @@ const Navbar = () => {
                     <li className='p-2 max-w-60 flex items-center cursor-pointer'>
                         <Link to='/' className='cursor-pointer'>
                             <img
-                                className='duration-300 w-24 dark:opacity-0 lg:w-32 md:w-28 lg:flex lg:justify-center lg:items-center fixed top-7 left-7 lg:top-6 md:top-6 lg:left-[47%] md:left-[45%]'
+                                className='duration-300 w-24 lg:w-32 md:w-28 lg:flex lg:justify-center lg:items-center fixed top-7 left-7 lg:top-6 md:top-6 lg:left-[47%] md:left-[45%]'
                                 src={MainLogo}
-                                alt='Queen Of Nature'
-                            ></img>
-                        </Link>
-                        <Link to='/' className='cursor-pointer'>
-                            <img
-                                className='duration-300 opacity-0 dark:opacity-100  w-24 lg:w-32 md:w-28 lg:flex lg:justify-center lg:items-center fixed top-7 left-7 lg:top-6 md:top-6 lg:left-[47%] md:left-[45%]'
-                                src={MainLogoLight}
                                 alt='Queen Of Nature'
                             ></img>
                         </Link>
@@ -95,7 +87,7 @@ const Navbar = () => {
                     className={
                         nav
                             ? "fixed bottom-0 justify-center left-0  w-full h-[35%] items-center drop-shadow-2xl dark:bg-slate-800 bg-gray-200 z-50 rounded-t-[40px] "
-                            : "fixed bottom-[-100%] left-0 w-[300px] h-screen dark:bg-slate-800 bg-gray-200 z-50 duration-1000"
+                            : "fixed bottom-[-1000%] left-0 w-[300px] h-screen dark:bg-slate-800 bg-gray-200 z-50 duration-1000"
                     }
                 >
                     {/* OVERLAY BACKGROUND BLUR END*/}
@@ -109,13 +101,8 @@ const Navbar = () => {
                         <div className='mx-auto flex items-center cursor-pointer'>
                             <Link to='/' className='cursor-pointer'>
                                 <img
-                                    className='w-24 dark:opacity-0 lg:w-32 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
+                                    className='w-24 lg:w-32 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
                                     src={MainLogo}
-                                    alt='Queen Of Nature'
-                                />
-                                <img
-                                    className='w-24 lg:w-32 opacity-0 dark:opacity-100 h-auto flex justify-center items-center my-5 dark:drop-shadow-lg fixed top-0 left-[41%] lg:left-[46%] md:top-1 md:left-[43%] lg:-top-1 '
-                                    src={MainLogoLight}
                                     alt='Queen Of Nature'
                                 />
                             </Link>
@@ -145,14 +132,14 @@ const Navbar = () => {
                             </ul>
                             <div className='flex justify-center items-center pt-4'>
                                 <Link to='/order-with'>
-                                    <div class='relative inline-flex items-center justify-center px-5 py-2 overflow-hidden font-medium text-sky-600 transition duration-700 ease-out border-2  dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text border-sky-600 rounded-full shadow-md group'>
-                                        <span class='absolute inset-0 flex items-center justify-center w-full h-full dark:text-slate-700 dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-content dark:drop-shadow-sm text-white duration-700 -translate-x-full bg-sky-600 group-hover:translate-x-0 ease'>
+                                    <div className='relative inline-flex items-center justify-center px-5 py-2 overflow-hidden font-medium text-sky-600 transition duration-700 ease-out border-2  dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text border-sky-600 rounded-full shadow-md group'>
+                                        <span className='absolute inset-0 flex items-center justify-center w-full h-full dark:text-slate-700 dark:bg-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-content dark:drop-shadow-sm text-white duration-700 -translate-x-full bg-sky-600 group-hover:translate-x-0 ease'>
                                             <MdShoppingCartCheckout className='text-4xl text-center items-center' />
                                         </span>
-                                        <span class='absolute flex font-bold items-center justify-center w-full h-full dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 transition-all duration-300 transform group-hover:translate-x-full ease'>
+                                        <span className='absolute flex font-bold items-center justify-center w-full h-full dark:text-transparent dark:bg-gradient-to-tr from-blue-400 to-emerald-400 bg-clip-text text-sky-600 transition-all duration-300 transform group-hover:translate-x-full ease'>
                                             Checkout Now!
                                         </span>
-                                        <span class='relative invisible font-bold'>
+                                        <span className='relative invisible font-bold'>
                                             Checkout Now!
                                         </span>
                                     </div>

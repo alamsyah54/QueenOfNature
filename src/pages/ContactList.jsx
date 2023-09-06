@@ -1,5 +1,5 @@
 import React from "react"
-import Navbar from "../components/Navbar"
+import Nav from "../components/Nav"
 import BackgroundGradient from "../components/BackgroundGradient"
 import DarkMode from "../components/DarkMode"
 import Footer from "../components/Footer"
@@ -11,7 +11,7 @@ const ContactList = () => {
     return (
         <div className='p-0 overflow-hidden bg-slate-200 dark:bg-gray-900'>
             <BackgroundGradient />
-            <Navbar />
+            <Nav />
             <section className='px-5 py-32 '>
                 <div className='flex my-10 justify-center'>
                     <div className='relative'>
@@ -56,7 +56,6 @@ const ContactList = () => {
                     ))}
                 </div>
             </section>
-            <DarkMode />
             <Footer />
         </div>
     )
